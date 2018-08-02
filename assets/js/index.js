@@ -1,6 +1,47 @@
 $(function(){
     var friendLinkParent = $('.friend-link');//友情链接挂载ele
     var authorlistH = $('.ar-author-list').height() + 30//;邮编作者列表高度（加上padding）
+    
+    //24节气 + 法定节假日
+    var jie_ri = [
+        {'time':'0204', 'name':'立春',  'en':'Spring begins',   'des':'东风吹散梅梢雪，一夜挽回天下春',           'banner':''},//立春
+        {'time':'0219', 'name':'雨水',  'en':'The rains',       'des':'天将化雨舒清景，萌动生机待绿田',           'banner':''},//雨水
+          
+        {'time':'0305', 'name':'惊蛰',  'en':'Insects awake',     'des':'一阵催花雨，数声惊蛰雷',                'banner':''},//惊蛰
+        {'time':'0321', 'name':'春分',  'en':'Vernal Equinox',    'des':'天将小雨交春半，谁见枝头花历乱',         'banner':''},//春分
+        {'time':'0405', 'name':'清明',  'en':'Clear and bright',  'des':'借问酒家何处有? 牧童遥指杏花村',         'banner':''},//清明
+        {'time':'0420', 'name':'谷雨',  'en':'Grain rain',        'des':'花木含甘露，岂非时节好',                 'banner':''},//谷雨
+  
+        {'time':'0505', 'name':'立夏',  'en':'Summer begins',     'des':'云收雨过波添，楼高水冷瓜甜，绿树阴垂画檐', 'banner':''},//立夏
+        {'time':'0521', 'name':'小满',  'en':'Grain buds',        'des':'夜莺啼绿柳，皓月醒长空',                 'banner':''},//小满
+        {'time':'0606', 'name':'芒种',  'en':'Grain in ear',      'des':'时雨及芒种，四野皆插秧',                 'banner':''},//芒种
+        {'time':'0621', 'name':'夏至',  'en':'Summer solstice',   'des':'夏至不锄根边草，如同养下毒蛇咬',           'banner':''},//夏至
+          
+        {'time':'0707', 'name':'小暑',  'en':'Slight heat',       'des':'倏忽温风至，因循小暑来',                 'banner':''},//小暑
+        {'time':'0723', 'name':'大暑',  'en':'Great heat',        'des':'何以销烦暑，端居一院中',                 'banner':''},//大暑
+        {'time':'0807', 'name':'立秋',  'en':'Autumn begins',     'des':'秋风吹雨过南楼，一夜新凉是立秋',           'banner':''},//立秋
+        {'time':'0823', 'name':'处暑',  'en':'Stopping the heat', 'des':'处暑无三日，新凉直万金',                  'banner':''},//处暑
+          
+        {'time':'0908', 'name':'白露',  'en':'White dews',        'des':'蒹葭苍苍，白露为霜,所谓伊人，在水一方',     'banner':''},//白露
+        {'time':'0923', 'name':'秋分',  'en':'Autumn Equinox',    'des':'燕将明日去，秋向此时分',                  'banner':''},//秋分
+        {'time':'1008', 'name':'寒露',  'en':'Cold dews',         'des':'草色多寒露，虫声似故乡',                  'banner':''},//寒露
+        {'time':'1023', 'name':'霜降',  'en':'Hoar-frost falls',  'des':'鸡声茅店月，人述板桥霜',                  'banner':''},//霜降
+  
+        {'time':'1107', 'name':'立冬',  'en':'Winter begins',     'des':'忽见桃花出小红，因惊十月起温风',           'banner':''},//立冬
+        {'time':'1122', 'name':'小雪',  'en':'Light snow',        'des':'云暗初成霰点微，旋闻蔌蔌洒窗扉',           'banner':''},//小雪
+        {'time':'1207', 'name':'大雪',  'en':'Heavy snow',        'des':'渺万里层云，千山暮雪，只影向谁去？',        'banner':''},//大雪
+        {'time':'1222', 'name':'冬至',  'en':'Winter Solstice',   'des':'寒谷春生，熏叶气、玉筒吹谷',               'banner':''},//冬至
+  
+        {'time':'0105', 'name':'小寒',  'en':'Slight cold',       'des':'轻风小寒吹浪花，新柳茸茸啼乳鸦',            'banner':''},//小寒
+        {'time':'0120', 'name':'大寒',  'en':'Great cold',        'des':'乃知大寒岁，农者尤苦辛',                   'banner':''},//大寒
+    ];
+
+    var season = [
+        {'name':'春', 'en':'',  'des':['小楼一夜听春雨，深巷明朝卖杏花','最是一年春好处，绝胜烟柳满皇都','燕子飞时，绿水人家绕'], 'banner':['','','']},//春
+        {'name':'夏', 'en':'',  'des':['小荷才露尖尖角，早有蜻蜓立上头','连雨不知春去，一晴方觉夏深','稻花香里说丰年。听取蛙声一片'], 'banner':['','','']},//夏
+        {'name':'秋', 'en':'',  'des':['一声梧叶一声秋，一点芭蕉一点愁','落霞与孤鹜齐飞，秋水共长天一色','山远天高烟水寒，相思枫叶丹'], 'banner':['','','']},//秋
+        {'name':'冬', 'en':'',  'des':['北国风光，千里冰封，万里雪飘','山回路转不见君，雪上空留马行处','欲将轻骑逐，大雪满弓刀'], 'banner':['','','']},//冬
+    ]
     //设置日历
     setBannerDate();
     //设置颜色随机
@@ -98,7 +139,7 @@ $(function(){
 
     });
 
-    //自动加载
+    //滚动自动加载
     $('.article-left-box').infiniteScroll({
         path: '.older-posts',//下一页按钮
         append: '.articale-item-box',//循环父级容器
@@ -126,7 +167,6 @@ var colorArr = [
     '#8ac249',
     '#5f7c8a',
 ];
-
 function colorRadom(secector, type) {
     var arr = [];//存放随机数的数组
     var acolorLen = colorArr.length;//数组长度，也用来限制范围
@@ -145,22 +185,26 @@ function colorRadom(secector, type) {
 // colorRadom($('.aib-tag-item'), 'border-color');
 // colorRadom($('.chip'), 'background');
 
-
-// 首页日历函数 网上找的代码 哈哈哈
+//国历
 function setBannerDate() {
     var myDate = new Date();
     var thisYear = myDate.getFullYear();
     var thisMonth = myDate.getMonth() + 1;
-    var thisDate = myDate.getDate();
+    var thisDate = myDate.getDate() <= 9 ? '0'+ myDate.getDate() : myDate.getDate();
+    var monthWidthZero = thisMonth <= 9 ? '0'+ thisMonth : thisMonth;
+    var sueForJieQi = monthWidthZero.toString() + thisDate.toString();
+    console.log(sueForJieQi);
     $('.data').text(thisDate + '/');
     $('.guoli-month').text(thisMonth + '月');
     $('.guoli-year').text(thisYear + '');
 
+    
 }
+// 首页日历函数 网上找的代码 哈哈哈
 var CalendarData = new Array(100);
 var madd = new Array(12);
-var tgString = "甲乙丙丁戊己庚辛壬癸";
-var dzString = "子丑寅卯辰巳午未申酉戌亥";
+var tgString = "甲乙丙丁戊己庚辛壬癸";//天干
+var dzString = "子丑寅卯辰巳午未申酉戌亥";//地支
 var numString = "一二三四五六七八九十";
 var monString = "正二三四五六七八九十冬腊";
 var weekString = "日一二三四五六";
@@ -183,6 +227,7 @@ madd[11] = 334;
 function GetBit(m, n) {
     return (m >> n) & 1;
 }
+
 function e2c() {
     TheDate = (arguments.length != 3) ? new Date() : new Date(arguments[0], arguments[1], arguments[2]);
     var total, m, n, k;

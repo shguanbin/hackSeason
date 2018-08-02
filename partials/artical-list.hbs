@@ -36,7 +36,7 @@
                                         {{#if profile_image}}
                                                 <img class="top-post-head" src="{{profile_image}}" alt="{{name}}" />
                                         {{else}}
-                                                <img class="top-post-head" src="{{asset "images/default.png"}}" alt="{{name}}" />
+                                                <img class="top-post-head" src="http://hackbinimg.luokangyuan.com/default-head.png" alt="{{name}}" />
                                         {{/if}}
                                         <span>&nbsp;&nbsp;{{name}}</span>
                                     </a>
@@ -50,7 +50,17 @@
                                     {{/foreach}}
                                 {{/if}}
                             </div>
-                            <span class="reading-time read-time-title"><b>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</b></span>
+                            <span class="reading-time read-time-title">
+                                <b>
+                                    {{!-- 评论 --}}
+                                    <i class="icon-pinglun"></i>
+                                    <span id = "sourceId::{{id}}" class = "cy_cmt_count" ></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytKgKylg">
+                                    </script>
+                                    {{!-- 阅读时间 --}}
+                                    {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                                </b>
+                            </span>
 
                         </footer>
                     </div>
@@ -88,17 +98,26 @@
                                         {{/author}}
                                         <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                                         {{!-- 时间 --}}
-                                        <span><i class="icon-time"></i>&nbsp;{{date published_at timeago="true"}}</span>
+                                        <span><i class="icon-rili"></i>&nbsp;{{date published_at timeago="true"}}</span>
                                         {{!-- 文章标签 --}}
                                         <span class="aib-tages">
                                             {{#if tags}}
                                                 {{#foreach tags}}
-                                                    <span>&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+                                                    <span>&nbsp;·&nbsp;</span>
                                                     <a href="{{url}}" target="_blank" class="aib-tag-item color-blue">{{name}}</a>
                                                 {{/foreach}}
                                             {{/if}}
                                         </span>
-                                        <span class="read-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+
+                                        <span class="read-time">
+                                            {{!-- 评论 --}}
+                                            <i class="icon-pinglun"></i>
+                                            <span id = "sourceId::{{id}}" class = "cy_cmt_count" ></span>&nbsp;&nbsp;
+                                            <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytKgKylg">
+                                            </script>
+                                            {{!-- 阅读时间 --}}
+                                            <i class="icon-time"></i>&nbsp;{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +150,7 @@
                                     <span>{{name}}</span>
                                     <small>( {{count.posts}} 篇文章 ) </small>
                                 </div>
-                                <div class="bio color-gray">
+                                <div class="bio color-gray" title="{{bio}}">
                                     {{#if bio}}
                                         {{bio}}
                                     {{else}}
@@ -174,7 +193,7 @@
                     <img src="http://hackbinimg.luokangyuan.com/share.png" alt="" srcset="">
                     <span class="color-black">占位专用</span>
                 </a>
-                <a class="ar-help-item-box">
+                <a href="https://github.com/mrbin1573/hackSeason" target="_blank" class="ar-help-item-box">
                     <img src="http://hackbinimg.luokangyuan.com/use-theme.png" alt="" srcset="">
                     <span class="color-black">使用主题</span>
                 </a>

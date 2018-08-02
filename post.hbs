@@ -47,10 +47,8 @@ into the {body} of the default.hbs template --}}
                         {{/if}}
                     </section>
                 </header>
-                
                 {{content}}
             </section>
-
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
@@ -75,11 +73,22 @@ into the {body} of the default.hbs template --}}
 
             </footer>
 
-            {{!--
+            
+            {{!-- 评论 --}}
             <section class="post-full-comments">
-                If you want to embed comments, this is a good place to do it!
+            <!--PC版-->
+                <div class="pinglun-pc">
+                    <div id="SOHUCS" sid="{{id}}"></div>
+                    <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+                    <script type="text/javascript">
+                        window.changyan.api.config({
+                        appid: 'cytKgKylg',
+                        conf: 'prod_c3ecfbd1ff45f29e3c3f453acd705373'
+                    });
+                    </script>
+                </div>
             </section>
-            --}}
+           
 
         </article>
 
