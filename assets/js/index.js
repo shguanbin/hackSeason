@@ -52,7 +52,7 @@ $(function(){
 
     //设置顶部菜单按钮
     if(typeof topNemuArr != 'undefined'){
-        setTopMenu(menuArr);
+        setTopMenu(topNemuArr);
     }
     function setTopMenu(menuArr){
         var rootEle = $('.menu-add-box'),//菜单挂载元素
