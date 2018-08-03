@@ -11,35 +11,35 @@
     <div class="post-card-content">
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
-                {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
-                {{/if}}
+                <span class="color-gray"><b>{{date}}（{{date published_at timeago="true"}}）</b></span>
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
             <section class="post-card-excerpt">
                 <p>{{excerpt characters="33"}}</p>
             </section>
         </a>
+        {{!-- 作者信息 --}}
         <footer class="post-card-meta">
-
-            <ul class="author-list">
-            {{#foreach authors}}
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        {{name}}
-                    </div>
-
-                    {{#if profile_image}}
-                        <a href="{{url}}" class="static-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
-                    {{else}}
-                        <a href="{{url}}" class="static-avatar"><img class="author-profile-image" src="http://hackbinimg.luokangyuan.com/default-head.png" alt="{{name}}" /></a>
-                    {{/if}}
-                </li>
-            {{/foreach}}
-            </ul>
-
-            <span class="reading-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+            <div class="top-post-author">
+                {{!-- 标签 --}}
+                {{#if tags}}
+                    {{#foreach tags}}
+                        <a href="{{url}}" target="_blank" class="aib-tag-item color-blue">{{name}}</a>
+                        <span>&nbsp;&nbsp;</span>
+                    {{/foreach}}
+                {{/if}}
+            </div>
+            <span class="reading-time read-time-title">
+                <b>
+                    {{!-- 评论 --}}
+                    <i class="icon-pinglun"></i>
+                    <span id = "sourceId::{{id}}" class = "cy_cmt_count" ></span>&nbsp;
+                    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytKgKylg">
+                    </script>
+                    {{!-- 阅读时间 --}}
+                    <i class="icon-time"></i>&nbsp;{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                </b>
+            </span>
 
         </footer>
     </div>

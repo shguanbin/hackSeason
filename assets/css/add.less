@@ -55,6 +55,12 @@
     font-family: '微软雅黑';
     text-decoration: none !important;
 }
+.post-card-excerpt,.post-full-meta-date{
+    font-family: '微软雅黑';
+}
+.menu-add-box{
+    display: flex;
+}
 .click-effect:active{
     transition: @animateTime;
     transform: scale(.95);
@@ -82,17 +88,20 @@
 .no-border{
    border: none !important;
 }
+.site-main{
+    background: transparent;
+}
 // banner
 .banner{
     width: 100%;
     height: 100vh;
     overflow: hidden;
     .swiper-container{
-        // filter: grayscale(.85);
         .swiper-wrapper{
             .swiper-slide{
                 >img{
                     width: 100%;
+                    min-height: 100vh;
                 }
             }
         }
@@ -227,8 +236,7 @@
                                 cursor: pointer;
                                 >img{
                                     transition: @animateTime;
-                                    width: 300px;
-                                    height: 300px;
+                                    width: 100%;
                                 }
                                 &:hover{
                                     >img{
@@ -241,6 +249,8 @@
                                 width: calc(~'100% - 250px');
                                 font-size: 30px;
                                 padding-left: 40px;
+                                overflow-y: auto;
+                                overflow-x: hidden;
                                 .mune-item{
                                     float: left;
                                     display: flex;
@@ -255,6 +265,7 @@
                                     font-size: 30px;
                                     font-weight: bold;
                                     transition: @animateTime;
+                                    transform: scale(.98);
                                     .img-box{
                                         width:100%;
                                         height: 65px;
@@ -268,7 +279,7 @@
                                     }
                                     &:hover{
                                         color: rgb(0, 0, 0);
-                                        transform: scale(1.02);
+                                        transform: scale(1);
                                         .img-box{
                                             >img{
                                                 filter: grayscale(0);
@@ -345,6 +356,7 @@
         transition: @animateTime;
         .tbox-top{
             border-bottom: 2px solid #f6f6f6;
+            padding-bottom: 15px;
             .date-txt{
                 height: 140px;
                 line-height: 140px;
@@ -355,13 +367,14 @@
                 font-size: 50px;
                 word-spacing: 20px;
                 margin: 0 15px;
+                text-transform: capitalize;
             }
         }
         .tbox-bottom{
-            margin-top: 20px;
-            padding: 0 30px;
-            font-size: 40px;
-            letter-spacing: 15px;
+            margin-top: 30px;
+            padding: 0 10px;
+            font-size: 30px;
+            letter-spacing: 8px;
         }
         &:hover{
             background: rgba(0, 0, 0, 0.6);
@@ -382,6 +395,7 @@
         background: rgba(255, 255, 255, 0.3);
         box-shadow: @shadow;
         transition: @animateTime;
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
         &:hover{
             background: rgba(255, 255, 255, 0.4);
             color: #ca582b;

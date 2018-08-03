@@ -41,6 +41,13 @@
   font-family: '微软雅黑';
   text-decoration: none !important;
 }
+.post-card-excerpt,
+.post-full-meta-date {
+  font-family: '微软雅黑';
+}
+.menu-add-box {
+  display: flex;
+}
 .click-effect:active {
   transition: 0.3s;
   transform: scale(0.95);
@@ -68,6 +75,9 @@
 .no-border {
   border: none !important;
 }
+.site-main {
+  background: transparent;
+}
 .banner {
   width: 100%;
   height: 100vh;
@@ -75,6 +85,7 @@
 }
 .banner .swiper-container .swiper-wrapper .swiper-slide > img {
   width: 100%;
+  min-height: 100vh;
 }
 .banner .swiper-container .swiper-button-prev,
 .banner .swiper-container .swiper-button-next {
@@ -211,8 +222,7 @@
 }
 .site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .left-pic > img {
   transition: 0.3s;
-  width: 300px;
-  height: 300px;
+  width: 100%;
 }
 .site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .left-pic:hover > img {
   transform: scale(1.1);
@@ -222,6 +232,8 @@
   width: calc(100% - 250px);
   font-size: 30px;
   padding-left: 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .mune-item {
   float: left;
@@ -237,6 +249,7 @@
   font-size: 30px;
   font-weight: bold;
   transition: 0.3s;
+  transform: scale(0.98);
 }
 .site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .mune-item .img-box {
   width: 100%;
@@ -251,7 +264,7 @@
 }
 .site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .mune-item:hover {
   color: #000000;
-  transform: scale(1.02);
+  transform: scale(1);
 }
 .site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .mune-item:hover .img-box > img {
   filter: grayscale(0);
@@ -316,6 +329,7 @@
 }
 .banner-top-content .banner-txt-box .tbox-top {
   border-bottom: 2px solid #f6f6f6;
+  padding-bottom: 15px;
 }
 .banner-top-content .banner-txt-box .tbox-top .date-txt {
   height: 140px;
@@ -327,12 +341,13 @@
   font-size: 50px;
   word-spacing: 20px;
   margin: 0 15px;
+  text-transform: capitalize;
 }
 .banner-top-content .banner-txt-box .tbox-bottom {
-  margin-top: 20px;
-  padding: 0 30px;
-  font-size: 40px;
-  letter-spacing: 15px;
+  margin-top: 30px;
+  padding: 0 10px;
+  font-size: 30px;
+  letter-spacing: 8px;
 }
 .banner-top-content .banner-txt-box:hover {
   background: rgba(0, 0, 0, 0.6);
@@ -352,6 +367,7 @@
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
   transition: 0.3s;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
 }
 .banner-top-content .banner-rili-content:hover {
   background: rgba(255, 255, 255, 0.4);
