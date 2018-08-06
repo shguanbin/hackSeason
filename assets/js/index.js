@@ -1,88 +1,136 @@
 $(function(){
     var friendLinkParent = $('.friend-link');//友情链接挂载ele
     var authorlistH = $('.ar-author-list').height() + 30//;邮编作者列表高度（加上padding）
-    
-    var topNemuArr = [
-        {
-            'name':'前端',//一级菜单名字
-            'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
-            'subMenu':{//下拉二级菜单 不需要就删除
-                'brandSrc':'http://hackbinimg.luokangyuan.com/menu/qianduan.png',//下拉菜单标识大图 250x300
-                'menuItems':[
-                    {
-                        'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/html.png',//二级菜单图标 65x65
-                        'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-                        'itemLink':'/tag/html/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-                    },
-                    {
-                        'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/css.png',//二级菜单图标 65x65
-                        'itemName':'CSS',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-                        'itemLink':'/tag/css/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-                    },
-                    {
-                        'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/js.png',//二级菜单图标 65x65
-                        'itemName':'JavaScript',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-                        'itemLink':'/tag/JavaScript/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-                    },
-                    {
-                        'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/jq.png',//二级菜单图标 65x65
-                        'itemName':'jQuery',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-                        'itemLink':'/tag/jQuery/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-                    },
-                    {
-                        'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/vue.png',//二级菜单图标 65x65
-                        'itemName':'Vue',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-                        'itemLink':'/tag/Vue/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-                    },
-                    {
-                        'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/node.png',//二级菜单图标 65x65
-                        'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-                        'itemLink':'/tag/Node/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-                    },
-                    {
-                        'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/ng.png',//二级菜单图标 65x65
-                        'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-                        'itemLink':'/tag/Angular/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-                    },
+   
+    // var topNemuArr = [
+    //     {
+    //         'name':'前端',//一级菜单名字
+    //         'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
+    //         'subMenu':{//下拉二级菜单 不需要就删除
+    //             'brandSrc':'http://hackbinimg.luokangyuan.com/menu/qianduan.png',//下拉菜单标识大图 250x300
+    //             'menuItems':[
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/html.png',//二级菜单图标 65x65
+    //                     'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/html/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/css.png',//二级菜单图标 65x65
+    //                     'itemName':'CSS',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/css/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/js.png',//二级菜单图标 65x65
+    //                     'itemName':'JavaScript',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/JavaScript/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/jq.png',//二级菜单图标 65x65
+    //                     'itemName':'jQuery',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/jQuery/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/vue.png',//二级菜单图标 65x65
+    //                     'itemName':'Vue',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/Vue/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/node.png',//二级菜单图标 65x65
+    //                     'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/Node/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/ng.png',//二级菜单图标 65x65
+    //                     'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/Angular/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
                     
-                ]
-            }
-        }
-    ]
+    //             ]
+    //         }
+    //     },
+    //     {
+    //         'name':'后端',//一级菜单名字
+    //         'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
+    //         'subMenu':{//下拉二级菜单 不需要就删除
+    //             'brandSrc':'http://hackbinimg.luokangyuan.com/menu/houtai.png',//下拉菜单标识大图 250x300
+    //             'menuItems':[
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/java.png',//二级菜单图标 65x65
+    //                     'itemName':'Java',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/java/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/mybatis.png',//二级菜单图标 65x65
+    //                     'itemName':'Mybatis',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/mybatis/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/spring.png',//二级菜单图标 65x65
+    //                     'itemName':'spring',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/spring/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/springBoot.png',//二级菜单图标 65x65
+    //                     'itemName':'SpringBoot',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/springBoot/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/springCloud.png',//二级菜单图标 65x65
+    //                     'itemName':'SpringCloud',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/springCloud/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 },
+    //                 {
+    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/linux.png',//二级菜单图标 65x65
+    //                     'itemName':'Linux',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                     'itemLink':'/tag/linux/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //                 }
+                    
+    //             ]
+    //         }
+    //     },
+    //     {
+    //         'name':'随笔',//一级菜单名字
+    //         'link':'/tag/sui-bi/',//一级菜单链接 不跳转填 [javascript:;]
+    //     }
+    // ]
 
+    
     //设置顶部菜单按钮
     if(typeof topNemuArr != 'undefined'){
         setTopMenu(topNemuArr);
     }
     function setTopMenu(menuArr){
-        var rootEle = $('.menu-add-box'),//菜单挂载元素
-            $liEle = $('<li class="nav- nav-current" role="menuitem"></li>'),//生成菜单根元素
-            rootMennu,//一级菜单名字
-            $subMenuEle = $('<div class="right-content"></div>'),//二级菜单根元素
-            subMenuString = '',//二级菜单累加结果
-            subBrandImg;//下拉菜单logo
+        var rootEle = $('.menu-add-box');//菜单挂载元素
         for(var i=0; i<menuArr.length; i++){
-            rootMennu = '<a href="'+ menuArr[i].name +'">'+ menuArr[i].name +'</a>'
-            $liEle.append(rootMennu);
+            var $subMenuRoot = $('<div class="inner sub-content"></div>'),
+            $rightMenuitemBox = $('<div class="right-content"></div>'),
+            subBrandImg,//下拉菜单logo
+            $subMenu = $('<div class="sub-menu-box"></div>'),//二级菜单根元素
+            $liEle = $('<li class="nav- nav-current" role="menuitem"></li>');//生成菜单根元素
 
+            $liEle.append('<a href="'+ menuArr[i].link +'">'+ menuArr[i].name +'</a>');//设置一级菜单
             if(menuArr[i].subMenu){
                 subBrandImg = '<div class="left-pic middle-center">\
-                    <img src="'+ menuArr[i].subMenu.brandSrc +'" alt="" srcset="">\
+                <img src="'+ menuArr[i].subMenu.brandSrc +'" alt="" srcset="">\
                 </div>'
-            
-                for(var j=0; j<menuArr[i].subMenu.menuItems; j++){
-                    subMenuString += '<a href="'+ menuArr[i].subMenu[j].itemLink +'" class="mune-item">\
+                $subMenuRoot.append(subBrandImg);
+                
+                subMenuString = '';//二级菜单累加结果
+                for(var j=0; j<menuArr[i].subMenu.menuItems.length; j++){
+                    subMenuString += '<a href="'+ menuArr[i].subMenu.menuItems[j].itemLink +'" class="mune-item">\
                         <div class="img-box middle-center">\
-                            <img src="'+ menuArr[i].subMenu[j].itemImgSrc +'" alt="" srcset="">\
+                            <img src="'+ menuArr[i].subMenu.menuItems[j].itemImgSrc +'" alt="" srcset="">\
                             </div>\
-                        <span>'+ menuArr[i].subMenu[j].itemName +'</span>\
+                        <span>'+ menuArr[i].subMenu.menuItems[j].itemName +'</span>\
                     </a>'
                 }
-                $liEle.append(rootMennu);
+                $rightMenuitemBox.append(subMenuString);
+                $subMenuRoot.append($rightMenuitemBox);
+                $subMenu.append($subMenuRoot);
+                $liEle.append($subMenu);
             }
 
-            $subMenuEle.append(subMenuString);
-            rootEle.append();
+            rootEle.append($liEle);
 
         }
     }
@@ -248,6 +296,11 @@ $(function(){
         append: '.articale-item-box',//循环父级容器
         status: '.page-load-status',//加载中、结束、报错页面
         hideNav: '.pagination'//隐藏起来的翻页控件
+    });
+
+    //页面加载完成
+    $(window).ready(function(){
+        console.log('dom加载完成');
     });
 });
 

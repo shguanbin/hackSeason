@@ -26,7 +26,7 @@
   "youremail@example.com": "youremail@example.com",
   "1 post": "1 篇文章",
   "% posts": "% 篇文章",
-  "1 min read": "1分钟读完",
-  "% min read": "%分钟读完",
+  "1 min read": "约1分钟",
+  "% min read": "约%分钟",
   "days ago": "天之前"
 }

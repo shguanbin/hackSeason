@@ -50,16 +50,27 @@
                                     {{/foreach}}
                                 {{/if}}
                             </div>
-                            <span class="reading-time read-time-title">
-                                <b>
-                                    {{!-- 评论 --}}
+                            <span class="read-time">
+                                {{!-- 阅读量 --}}
+                                {{!-- <span class="post-item-bottom-box color-gray" title="阅读量">
+                                    <i class="icon-data"></i>
+                                    <span id="busuanzi_container_page_pv">
+                                        <span id="busuanzi_value_page_pv"></span>
+                                    </span>
+                                </span>
+                                &nbsp;&nbsp; --}}
+                                {{!-- 评论 --}}
+                                <a href="{{url}}" class="post-item-bottom-box color-gray" title="评论数">
                                     <i class="icon-pinglun"></i>
-                                    <span id = "sourceId::{{id}}" class = "cy_cmt_count" ></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span id = "sourceId::{{id}}" class = "cy_cmt_count" ></span>
                                     <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytKgKylg">
                                     </script>
-                                    {{!-- 阅读时间 --}}
+                                </a>
+                                &nbsp;&nbsp;
+                                {{!-- 阅读时间 --}}
+                                <span class="post-item-bottom-box color-gray" title="阅读时间">
                                     <i class="icon-time"></i>&nbsp;{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
-                                </b>
+                                </span>
                             </span>
 
                         </footer>
@@ -109,14 +120,27 @@
                                             {{/if}}
                                         </span>
 
-                                        <span class="read-time">
+                                        <span class="read-time" title="阅读量">
+                                            {{!-- 阅读量 --}}
+                                            <span class="post-item-bottom-box" title="阅读量">
+                                                <i class="icon-data"></i>
+                                                <span id="busuanzi_container_page_pv">
+                                                    <span id="busuanzi_value_page_pv"></span>
+                                                </span>
+                                            </span>
+                                            &nbsp;&nbsp;
                                             {{!-- 评论 --}}
-                                            <i class="icon-pinglun"></i>
-                                            <span id = "sourceId::{{id}}" class = "cy_cmt_count" ></span>&nbsp;&nbsp;
-                                            <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytKgKylg">
-                                            </script>
+                                            <a href="{{url}}" class="post-item-bottom-box color-gray" title="评论数">
+                                                <i class="icon-pinglun"></i>
+                                                <span id = "sourceId::{{id}}" class = "cy_cmt_count" ></span>
+                                                <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytKgKylg">
+                                                </script>
+                                            </a>
+                                            &nbsp;&nbsp;
                                             {{!-- 阅读时间 --}}
-                                            <i class="icon-time"></i>&nbsp;{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                                            <span class="post-item-bottom-box" title="阅读时间">
+                                                <i class="icon-time"></i>&nbsp;{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                                            </span>
                                         </span>
                                     </div>
                                 </div>
@@ -204,15 +228,27 @@
 </div>
 <div class="page-load-status">
     <p class="infinite-scroll-request">
-        <img class="status-img loading" src="http://hackbinimg.luokangyuan.com/20180731220789/logoblue.png" alt="" srcset="">
+        {{#if @blog.icon}}
+            <img  class="status-img loading" src="{{@blog.icon}}" alt="{{@blog.title}}" />
+        {{else}}
+            <img class="status-img loading" src="http://pcqg5j51d.bkt.clouddn.com/20180731220789/logoblue.png" alt="" srcset="">
+        {{/if}}
         加载中...
     </p>
     <p class="infinite-scroll-last">
-        <img class="status-img" src="http://hackbinimg.luokangyuan.com/20180731220789/logoblue.png" alt="" srcset="">
+        {{#if @blog.icon}}
+            <img  class="status-img" src="{{@blog.icon}}" alt="{{@blog.title}}" />
+        {{else}}
+            <img class="status-img" src="http://pcqg5j51d.bkt.clouddn.com/20180731220789/logoblue.png" alt="" srcset="">
+        {{/if}}
         没有更多文章了
     </p>
     <p class="infinite-scroll-error">
-        <img class="status-img" src="http://pcqg5j51d.bkt.clouddn.com/20180731220789/logoblue.png" alt="" srcset="">
+        {{#if @blog.icon}}
+            <img  class="status-img" src="{{@blog.icon}}" alt="{{@blog.title}}" />
+        {{else}}
+            <img class="status-img" src="http://pcqg5j51d.bkt.clouddn.com/20180731220789/logoblue.png" alt="" srcset="">
+        {{/if}}
         貌似出错了，点下首页或者刷新试试？
     </p>
 </div>
