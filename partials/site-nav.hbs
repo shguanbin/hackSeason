@@ -221,7 +221,7 @@
                         <a href="http://hackbin.cn/tag/sui-bi/">随笔</a>
                     </li> --}}
                 </span>
-                <li class="nav- nav-current middle-center" role="menuitem">
+                <li class="nav- nav-current middle-center" id="search-menu" role="menuitem">
                     <a href="javascript:;" class="icon-search"></a>
                     <div class="sub-menu-box">
                         <div class="inner sub-content">
@@ -230,15 +230,17 @@
                             </div>
                             <div class="right-content">
                                 <form>
-                                    <input class="search-input"  id="search-field" type="text" placeholder="请输入关键词(暂不支持中文)">
+                                    <input class="search-input"  id="search-field" autocomplete="off" type="text" placeholder="请输入搜索内容">
                                     {{!-- <input type="submit" value="search"> --}}
                                 </form>
-                                <section id="results" class="search-result-box">
-                                    {{!-- <h5 class='res-title'>共4 篇相关文章</h5>
-                                    <a id="gh-5b584226cd87821cbcc4e5fa" class="gh-search-item" href="/ce-shi/">测试</a>
-                                    <a id="gh-5b5553776bd2bf2eac3d7c56" class="gh-search-item" href="/welcome/">Welcome to Ghost</a>
-                                    <a id="gh-5b5553776bd2bf2eac3d7c52" class="gh-search-item" href="/using-tags/">Organising your content with tags</a>
-                                    <a id="gh-5b5553776bd2bf2eac3d7c54" class="gh-search-item" href="/the-editor/">Using the Ghost editor</a> --}}
+                                <section id="results" hidden class="search-result-box">
+                                    <h5 class='res-title' hidden>共 <span id="res-count">4</span> 篇相关文章</h5>
+                                    {{!-- <a id="gh-5b584226cd87821cbcc4e5fa" class="search-res-item" href="/ce-shi/">
+                                    测试
+                                        <span class="search-post-content">
+                                            (水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国水电费感受到法国)
+                                        </span>
+                                    </a> --}}
                                 </section>
                             </div>
                         </div>

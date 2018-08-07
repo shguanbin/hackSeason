@@ -1,7 +1,7 @@
-$(function(){
-    var friendLinkParent = $('.friend-link');//友情链接挂载ele
-    var authorlistH = $('.ar-author-list').height() + 30//;邮编作者列表高度（加上padding）
-   
+$(function () {
+    var friendLinkParent = $('.friend-link'); //友情链接挂载ele
+    var authorlistH = $('.ar-author-list').height() + 30 //;邮编作者列表高度（加上padding）
+
     // var topNemuArr = [
     //     {
     //         'name':'前端',//一级菜单名字
@@ -44,7 +44,7 @@ $(function(){
     //                     'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
     //                     'itemLink':'/tag/Angular/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
     //                 },
-                    
+
     //             ]
     //         }
     //     },
@@ -84,7 +84,7 @@ $(function(){
     //                     'itemName':'Linux',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
     //                     'itemLink':'/tag/linux/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
     //                 }
-                    
+
     //             ]
     //         }
     //     },
@@ -94,34 +94,34 @@ $(function(){
     //     }
     // ]
 
-    
     //设置顶部菜单按钮
-    if(typeof topNemuArr != 'undefined'){
+    if (typeof topNemuArr != 'undefined') {
         setTopMenu(topNemuArr);
     }
-    function setTopMenu(menuArr){
-        var rootEle = $('.menu-add-box');//菜单挂载元素
-        for(var i=0; i<menuArr.length; i++){
-            var $subMenuRoot = $('<div class="inner sub-content"></div>'),
-            $rightMenuitemBox = $('<div class="right-content"></div>'),
-            subBrandImg,//下拉菜单logo
-            $subMenu = $('<div class="sub-menu-box"></div>'),//二级菜单根元素
-            $liEle = $('<li class="nav- nav-current" role="menuitem"></li>');//生成菜单根元素
 
-            $liEle.append('<a href="'+ menuArr[i].link +'">'+ menuArr[i].name +'</a>');//设置一级菜单
-            if(menuArr[i].subMenu){
+    function setTopMenu(menuArr) {
+        var rootEle = $('.menu-add-box'); //菜单挂载元素
+        for (var i = 0; i < menuArr.length; i++) {
+            var $subMenuRoot = $('<div class="inner sub-content"></div>'),
+                $rightMenuitemBox = $('<div class="right-content"></div>'),
+                subBrandImg, //下拉菜单logo
+                $subMenu = $('<div class="sub-menu-box"></div>'), //二级菜单根元素
+                $liEle = $('<li class="nav- nav-current" role="menuitem"></li>'); //生成菜单根元素
+
+            $liEle.append('<a href="' + menuArr[i].link + '">' + menuArr[i].name + '</a>'); //设置一级菜单
+            if (menuArr[i].subMenu) {
                 subBrandImg = '<div class="left-pic middle-center">\
-                <img src="'+ menuArr[i].subMenu.brandSrc +'" alt="" srcset="">\
+                <img src="' + menuArr[i].subMenu.brandSrc + '" alt="" srcset="">\
                 </div>'
                 $subMenuRoot.append(subBrandImg);
-                
-                subMenuString = '';//二级菜单累加结果
-                for(var j=0; j<menuArr[i].subMenu.menuItems.length; j++){
-                    subMenuString += '<a href="'+ menuArr[i].subMenu.menuItems[j].itemLink +'" class="mune-item">\
+
+                subMenuString = ''; //二级菜单累加结果
+                for (var j = 0; j < menuArr[i].subMenu.menuItems.length; j++) {
+                    subMenuString += '<a href="' + menuArr[i].subMenu.menuItems[j].itemLink + '" class="mune-item">\
                         <div class="img-box middle-center">\
-                            <img src="'+ menuArr[i].subMenu.menuItems[j].itemImgSrc +'" alt="" srcset="">\
+                            <img src="' + menuArr[i].subMenu.menuItems[j].itemImgSrc + '" alt="" srcset="">\
                             </div>\
-                        <span>'+ menuArr[i].subMenu.menuItems[j].itemName +'</span>\
+                        <span>' + menuArr[i].subMenu.menuItems[j].itemName + '</span>\
                     </a>'
                 }
                 $rightMenuitemBox.append(subMenuString);
@@ -137,65 +137,276 @@ $(function(){
     //24节气 + 法定节假日
     var jie_ri = [
 
-        {'time':'0204', 'name':'立春',  'en':'Spring begins',   'des':['东风吹散梅梢雪，一夜挽回天下春'],           'banner':['lichun1.jpg','lichun2.jpg','lichun3.jpg']},//立春
-        {'time':'0219', 'name':'雨水',  'en':'The rains',       'des':['天将化雨舒清景，萌动生机待绿田'],           'banner':['yushui1.jpg','yushui2.jpg','yushui3.jpg']},//雨水
-          
-        {'time':'0305', 'name':'惊蛰',  'en':'Insects awake',     'des':['一阵催花雨，数声惊蛰雷'],                'banner':['jingzhe1.jpg','jingzhe2.jpg','jingzhe3.jpg']},//惊蛰
-        {'time':'0321', 'name':'春分',  'en':'Vernal Equinox',    'des':['天将小雨交春半，谁见枝头花历乱'],         'banner':['chunfen1.jpg','chunfen2.jpg','chunfen3.jpg']},//春分
-        {'time':'0405', 'name':'清明',  'en':'Clear and bright',  'des':['借问酒家何处有? 牧童遥指杏花村'],         'banner':['qingming1.jpg','qingming2.jpg','qingming3.jpg']},//清明
-        {'time':'0420', 'name':'谷雨',  'en':'Grain rain',        'des':['花木含甘露，岂非时节好'],                 'banner':['guyu1.jpg','guyu2.jpg','guyu3.jpg']},//谷雨
-  
-        {'time':'0505', 'name':'立夏',  'en':'Summer begins',     'des':['云收雨过波添，楼高水冷瓜甜，绿树阴垂画檐'], 'banner':['lixia1.jpg','lixia2.jpg','lixia3.jpg']},//立夏
-        {'time':'0521', 'name':'小满',  'en':'Grain buds',        'des':['小满小满，谷物渐满'],                     'banner':['xiaoman1.jpg','xiaoman2.jpg','xiaoman3.jpg']},//小满
-        {'time':'0606', 'name':'芒种',  'en':'Grain in ear',      'des':['时雨及芒种，四野皆插秧'],                 'banner':['mangzhong1.jpg','mangzhong2.jpg','mangzhong3.jpg']},//芒种
-        {'time':'0621', 'name':'夏至',  'en':'Summer solstice',   'des':['夏至不锄根边草，如同养下毒蛇咬'],           'banner':['xiazhi1.jpg','xiazhi2.jpg','xiazhi3.jpg']},//夏至
-          
-        {'time':'0707', 'name':'小暑',  'en':'Slight heat',       'des':['倏忽温风至，因循小暑来'],                 'banner':['xiaoshu1.jpg','xiaoshu2.jpg','xiaoshu3.jpg']},//小暑
-        {'time':'0723', 'name':'大暑',  'en':'Great heat',        'des':['何以销烦暑，端居一院中'],                 'banner':['dashu1.jpg','dashu2.jpg','dashu3.jpg']},//大暑
-        {'time':'0807', 'name':'立秋',  'en':'Autumn begins',     'des':['秋风吹雨过南楼，一夜新凉是立秋','山僧不解数甲子,一叶落知天下秋'],           'banner':['liqiu1.jpg','liqiu2.jpg','liqiu3.jpg']},//立秋
-        {'time':'0823', 'name':'处暑',  'en':'Stopping heat', 'des':['处暑无三日，新凉直万金'],                  'banner':['chushu1.jpg','chushu2.jpg','chushu3.jpg']},//处暑
-          
-        {'time':'0908', 'name':'白露',  'en':'White dews',        'des':['蒹葭苍苍，白露为霜,所谓伊人，在水一方'],     'banner':['bailu1.jpg','bailu2.jpg','bailu3.jpg']},//白露
-        {'time':'0923', 'name':'秋分',  'en':'Autumn Equinox',    'des':['燕将明日去，秋向此时分'],                  'banner':['qiufen1.jpg','qiufen2.jpg','qiufen3.jpg']},//秋分
-        {'time':'1008', 'name':'寒露',  'en':'Cold dews',         'des':['草色多寒露，虫声似故乡'],                  'banner':['hanlu1.jpg','hanlu2.jpg','hanlu3.jpg']},//寒露
-        {'time':'1023', 'name':'霜降',  'en':'Hoar-frost falls',  'des':['鸡声茅店月，人述板桥霜'],                  'banner':['shuangjiang1.jpg','shuangjiang2.jpg','shuangjiang3.jpg']},//霜降
-  
-        {'time':'1107', 'name':'立冬',  'en':'Winter begins',     'des':['忽见桃花出小红，因惊十月起温风'],           'banner':['lidong1.jpg','lidong2.jpg','lidong3.jpg']},//立冬
-        {'time':'1122', 'name':'小雪',  'en':'Light snow',        'des':['云暗初成霰点微，旋闻蔌蔌洒窗扉'],           'banner':['xiaoxue1.jpg','xiaoxue2.jpg','xiaoxue3.jpg']},//小雪
-        {'time':'1207', 'name':'大雪',  'en':'Heavy snow',        'des':['渺万里层云，千山暮雪，只影向谁去？'],        'banner':['daxue1.jpg','daxue2.jpg','daxue3.jpg']},//大雪
-        {'time':'1222', 'name':'冬至',  'en':'Winter Solstice',   'des':['寒谷春生，熏叶气、玉筒吹谷'],               'banner':['dongzhi1.jpg','dongzhi2.jpg','dongzhi3.jpg']},//冬至
-  
-        {'time':'0105', 'name':'小寒',  'en':'Slight cold',       'des':['轻风小寒吹浪花，新柳茸茸啼乳鸦'],            'banner':['xiaohan1.jpg','xiaohan2.jpg','xiaohan3.jpg']},//小寒
-        {'time':'0120', 'name':'大寒',  'en':'Great cold',        'des':['乃知大寒岁，农者尤苦辛'],                   'banner':['dahan1.jpg','dahan2.jpg','dahan3.jpg']},//大寒
-        
+        {
+            'time': '0204',
+            'name': '立春',
+            'en': 'Spring begins',
+            'des': ['东风吹散梅梢雪，一夜挽回天下春'],
+            'banner': ['lichun1.jpg', 'lichun2.jpg', 'lichun3.jpg']
+        }, //立春
+        {
+            'time': '0219',
+            'name': '雨水',
+            'en': 'The rains',
+            'des': ['天将化雨舒清景，萌动生机待绿田'],
+            'banner': ['yushui1.jpg', 'yushui2.jpg', 'yushui3.jpg']
+        }, //雨水
+
+        {
+            'time': '0305',
+            'name': '惊蛰',
+            'en': 'Insects awake',
+            'des': ['一阵催花雨，数声惊蛰雷'],
+            'banner': ['jingzhe1.jpg', 'jingzhe2.jpg', 'jingzhe3.jpg']
+        }, //惊蛰
+        {
+            'time': '0321',
+            'name': '春分',
+            'en': 'Vernal Equinox',
+            'des': ['天将小雨交春半，谁见枝头花历乱'],
+            'banner': ['chunfen1.jpg', 'chunfen2.jpg', 'chunfen3.jpg']
+        }, //春分
+        {
+            'time': '0405',
+            'name': '清明',
+            'en': 'Clear and bright',
+            'des': ['借问酒家何处有? 牧童遥指杏花村'],
+            'banner': ['qingming1.jpg', 'qingming2.jpg', 'qingming3.jpg']
+        }, //清明
+        {
+            'time': '0420',
+            'name': '谷雨',
+            'en': 'Grain rain',
+            'des': ['花木含甘露，岂非时节好'],
+            'banner': ['guyu1.jpg', 'guyu2.jpg', 'guyu3.jpg']
+        }, //谷雨
+
+        {
+            'time': '0505',
+            'name': '立夏',
+            'en': 'Summer begins',
+            'des': ['云收雨过波添，楼高水冷瓜甜，绿树阴垂画檐'],
+            'banner': ['lixia1.jpg', 'lixia2.jpg', 'lixia3.jpg']
+        }, //立夏
+        {
+            'time': '0521',
+            'name': '小满',
+            'en': 'Grain buds',
+            'des': ['小满小满，谷物渐满'],
+            'banner': ['xiaoman1.jpg', 'xiaoman2.jpg', 'xiaoman3.jpg']
+        }, //小满
+        {
+            'time': '0606',
+            'name': '芒种',
+            'en': 'Grain in ear',
+            'des': ['时雨及芒种，四野皆插秧'],
+            'banner': ['mangzhong1.jpg', 'mangzhong2.jpg', 'mangzhong3.jpg']
+        }, //芒种
+        {
+            'time': '0621',
+            'name': '夏至',
+            'en': 'Summer solstice',
+            'des': ['夏至不锄根边草，如同养下毒蛇咬'],
+            'banner': ['xiazhi1.jpg', 'xiazhi2.jpg', 'xiazhi3.jpg']
+        }, //夏至
+
+        {
+            'time': '0707',
+            'name': '小暑',
+            'en': 'Slight heat',
+            'des': ['倏忽温风至，因循小暑来'],
+            'banner': ['xiaoshu1.jpg', 'xiaoshu2.jpg', 'xiaoshu3.jpg']
+        }, //小暑
+        {
+            'time': '0723',
+            'name': '大暑',
+            'en': 'Great heat',
+            'des': ['何以销烦暑，端居一院中'],
+            'banner': ['dashu1.jpg', 'dashu2.jpg', 'dashu3.jpg']
+        }, //大暑
+        {
+            'time': '0807',
+            'name': '立秋',
+            'en': 'Autumn begins',
+            'des': ['秋风吹雨过南楼，一夜新凉是立秋', '山僧不解数甲子,一叶落知天下秋'],
+            'banner': ['liqiu1.jpg', 'liqiu2.jpg', 'liqiu3.jpg']
+        }, //立秋
+        {
+            'time': '0823',
+            'name': '处暑',
+            'en': 'Stopping heat',
+            'des': ['处暑无三日，新凉直万金'],
+            'banner': ['chushu1.jpg', 'chushu2.jpg', 'chushu3.jpg']
+        }, //处暑
+
+        {
+            'time': '0908',
+            'name': '白露',
+            'en': 'White dews',
+            'des': ['蒹葭苍苍，白露为霜,所谓伊人，在水一方'],
+            'banner': ['bailu1.jpg', 'bailu2.jpg', 'bailu3.jpg']
+        }, //白露
+        {
+            'time': '0923',
+            'name': '秋分',
+            'en': 'Autumn Equinox',
+            'des': ['燕将明日去，秋向此时分'],
+            'banner': ['qiufen1.jpg', 'qiufen2.jpg', 'qiufen3.jpg']
+        }, //秋分
+        {
+            'time': '1008',
+            'name': '寒露',
+            'en': 'Cold dews',
+            'des': ['草色多寒露，虫声似故乡'],
+            'banner': ['hanlu1.jpg', 'hanlu2.jpg', 'hanlu3.jpg']
+        }, //寒露
+        {
+            'time': '1023',
+            'name': '霜降',
+            'en': 'Hoar-frost falls',
+            'des': ['鸡声茅店月，人述板桥霜'],
+            'banner': ['shuangjiang1.jpg', 'shuangjiang2.jpg', 'shuangjiang3.jpg']
+        }, //霜降
+
+        {
+            'time': '1107',
+            'name': '立冬',
+            'en': 'Winter begins',
+            'des': ['忽见桃花出小红，因惊十月起温风'],
+            'banner': ['lidong1.jpg', 'lidong2.jpg', 'lidong3.jpg']
+        }, //立冬
+        {
+            'time': '1122',
+            'name': '小雪',
+            'en': 'Light snow',
+            'des': ['云暗初成霰点微，旋闻蔌蔌洒窗扉'],
+            'banner': ['xiaoxue1.jpg', 'xiaoxue2.jpg', 'xiaoxue3.jpg']
+        }, //小雪
+        {
+            'time': '1207',
+            'name': '大雪',
+            'en': 'Heavy snow',
+            'des': ['渺万里层云，千山暮雪，只影向谁去？'],
+            'banner': ['daxue1.jpg', 'daxue2.jpg', 'daxue3.jpg']
+        }, //大雪
+        {
+            'time': '1222',
+            'name': '冬至',
+            'en': 'Winter Solstice',
+            'des': ['寒谷春生，熏叶气、玉筒吹谷'],
+            'banner': ['dongzhi1.jpg', 'dongzhi2.jpg', 'dongzhi3.jpg']
+        }, //冬至
+
+        {
+            'time': '0105',
+            'name': '小寒',
+            'en': 'Slight cold',
+            'des': ['轻风小寒吹浪花，新柳茸茸啼乳鸦'],
+            'banner': ['xiaohan1.jpg', 'xiaohan2.jpg', 'xiaohan3.jpg']
+        }, //小寒
+        {
+            'time': '0120',
+            'name': '大寒',
+            'en': 'Great cold',
+            'des': ['乃知大寒岁，农者尤苦辛'],
+            'banner': ['dahan1.jpg', 'dahan2.jpg', 'dahan3.jpg']
+        }, //大寒
+
         //节假日
         // 建军
-        {'time':'0801', 'name':'建军节',  'en':'army day',         'des':['红军不怕远征难，万水千山只等闲','男儿何不带吴钩，收取关山五十州','自古英雄多奇志，狂揽九州苍桑月'],                   'banner':['jianjunjie1.jpg','jianjunjie2.jpg','jianjunjie3.jpg']},//大寒
+        {
+            'time': '0801',
+            'name': '建军节',
+            'en': 'army day',
+            'des': ['红军不怕远征难，万水千山只等闲', '男儿何不带吴钩，收取关山五十州', '自古英雄多奇志，狂揽九州苍桑月'],
+            'banner': ['jianjunjie1.jpg', 'jianjunjie2.jpg', 'jianjunjie3.jpg']
+        }, //大寒
 
         // 国庆
-        {'time':'1001', 'name':'国庆',  'en':'National Day',        'des':['犯我中华者，虽远必诛','苟利国家生死以，岂因祸福避趋之！','天行健，君子以自强不息'],                   'banner':['guoqing1.jpg','guoqing2.jpg','guoqing3.jpg']},//大寒
-        {'time':'1002', 'name':'国庆',  'en':'National Day',        'des':['犯我中华者，虽远必诛','苟利国家生死以，岂因祸福避趋之！','天行健，君子以自强不息'],                   'banner':['guoqing1.jpg','guoqing2.jpg','guoqing3.jpg']},//大寒
-        {'time':'1003', 'name':'国庆',  'en':'National Day',        'des':['犯我中华者，虽远必诛','苟利国家生死以，岂因祸福避趋之！','天行健，君子以自强不息'],                   'banner':['guoqing1.jpg','guoqing2.jpg','guoqing3.jpg']},//大寒
-        {'time':'1004', 'name':'国庆',  'en':'National Day',        'des':['犯我中华者，虽远必诛','苟利国家生死以，岂因祸福避趋之！','天行健，君子以自强不息'],                   'banner':['guoqing1.jpg','guoqing2.jpg','guoqing3.jpg']},//大寒
-        {'time':'1005', 'name':'国庆',  'en':'National Day',        'des':['犯我中华者，虽远必诛','苟利国家生死以，岂因祸福避趋之！','天行健，君子以自强不息'],                   'banner':['guoqing1.jpg','guoqing2.jpg','guoqing3.jpg']},//大寒
-        {'time':'1006', 'name':'国庆',  'en':'National Day',        'des':['犯我中华者，虽远必诛','苟利国家生死以，岂因祸福避趋之！','天行健，君子以自强不息'],                   'banner':['guoqing1.jpg','guoqing2.jpg','guoqing3.jpg']},//大寒
-        {'time':'1007', 'name':'国庆',  'en':'National Day',        'des':['犯我中华者，虽远必诛','苟利国家生死以，岂因祸福避趋之！','天行健，君子以自强不息'],                   'banner':['guoqing1.jpg','guoqing2.jpg','guoqing3.jpg']},//大寒
+        {
+            'time': '1001',
+            'name': '国庆',
+            'en': 'National Day',
+            'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
+            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+        }, //大寒
+        {
+            'time': '1002',
+            'name': '国庆',
+            'en': 'National Day',
+            'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
+            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+        }, //大寒
+        {
+            'time': '1003',
+            'name': '国庆',
+            'en': 'National Day',
+            'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
+            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+        }, //大寒
+        {
+            'time': '1004',
+            'name': '国庆',
+            'en': 'National Day',
+            'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
+            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+        }, //大寒
+        {
+            'time': '1005',
+            'name': '国庆',
+            'en': 'National Day',
+            'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
+            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+        }, //大寒
+        {
+            'time': '1006',
+            'name': '国庆',
+            'en': 'National Day',
+            'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
+            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+        }, //大寒
+        {
+            'time': '1007',
+            'name': '国庆',
+            'en': 'National Day',
+            'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
+            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+        }, //大寒
     ];
 
-    var season = [
-        {'name':'春', 'en':'spring',  'des':['小楼一夜听春雨，深巷明朝卖杏花','最是一年春好处，绝胜烟柳满皇都','燕子飞时，绿水人家绕'],         'banner':['spring1.jpg','spring2.jpg','spring3.jpg']},//春
-        {'name':'夏', 'en':'summer',  'des':['小荷才露尖尖角，早有蜻蜓立上头','连雨不知春去，一晴方觉夏深','稻花香里说丰年。听取蛙声一片'],     'banner':['summer1.jpg','summer2.jpg','summer3.jpg']},//夏
-        {'name':'秋', 'en':'autumn',  'des':['一声梧叶一声秋，一点芭蕉一点愁','落霞与孤鹜齐飞，秋水共长天一色','山远天高烟水寒，相思枫叶丹'],   'banner':['autumn1.jpg','autumn2.jpg','autumn3.jpg']},//秋
-        {'name':'冬', 'en':'winter',  'des':['北国风光，千里冰封，万里雪飘','山回路转不见君，雪上空留马行处','欲将轻骑逐，大雪满弓刀'],         'banner':['winter1.jpg','winter2.jpg','winter3.jpg']},//冬
+    var season = [{
+            'name': '春',
+            'en': 'spring',
+            'des': ['小楼一夜听春雨，深巷明朝卖杏花', '最是一年春好处，绝胜烟柳满皇都', '燕子飞时，绿水人家绕'],
+            'banner': ['spring1.jpg', 'spring2.jpg', 'spring3.jpg']
+        }, //春
+        {
+            'name': '夏',
+            'en': 'summer',
+            'des': ['小荷才露尖尖角，早有蜻蜓立上头', '连雨不知春去，一晴方觉夏深', '稻花香里说丰年。听取蛙声一片'],
+            'banner': ['summer1.jpg', 'summer2.jpg', 'summer3.jpg']
+        }, //夏
+        {
+            'name': '秋',
+            'en': 'autumn',
+            'des': ['一声梧叶一声秋，一点芭蕉一点愁', '落霞与孤鹜齐飞，秋水共长天一色', '山远天高烟水寒，相思枫叶丹'],
+            'banner': ['autumn1.jpg', 'autumn2.jpg', 'autumn3.jpg']
+        }, //秋
+        {
+            'name': '冬',
+            'en': 'winter',
+            'des': ['北国风光，千里冰封，万里雪飘', '山回路转不见君，雪上空留马行处', '欲将轻骑逐，大雪满弓刀'],
+            'banner': ['winter1.jpg', 'winter2.jpg', 'winter3.jpg']
+        }, //冬
     ]
 
     //设置日历
     setBannerDate();
-    
+
     //设置季节
     setSeasion(season, jie_ri);
     //设置颜色随机
-    colorRadom($('.contact-item'), 'color'); 
+    colorRadom($('.contact-item'), 'color');
     // colorRadom($('.post-full-header,.post-full-content'), 'border-color');    //文章标题和内容之间的线 
     colorRadom($('.blog-footer-new'), 'border-color'); //底部
     colorRadom($('.to-top-container'), 'background-color'); //返回顶部
@@ -222,46 +433,70 @@ $(function(){
         },
     });
 
-    //搜索按钮自动聚焦
-    // $('.icon-search').parent().hover(
-    //     function(){
-    //         $('#search-field').focus();
-    //     },
-    //     function(){
-    //         $('#search-field').blur();
-    //     }
-    // );
-
-    //搜索插件使用
-    $("#search-field").ghostHunter({
-        results : "#results",
-        includepages : true,//包含静态页面
-        info_template: "<h5 class='res-title'>共{{amount}} 篇相关文章</h5>",
-        onKeyUp : true,
-        result_template:"<a id='gh-{{ref}}' class='gh-search-item' href='{{link}}'>{{title}}</a>",
+    var allPosts;
+    var searchBox = $("#search-field");
+    $('#search-menu').hover(
+        //鼠标覆盖
+        function () {
+            searchBox.focus();
+            $.get(ghost.url.api('posts')).done(function (data) {
+                allPosts = data.posts;
+                console.log('posts', allPosts);
+            }).fail(function (err) {
+                alert('其实我也不知道什么错，假装网络不好，刷新试试');
+            });
+        },
+        // 鼠标离开
+        function () {
+            searchBox.blur();
+        }
+    )
+    $("#search-field").on('input porpertychange', function () {
+        var thisTxt = searchBox.val().trim();
+        $('#results,.res-title').hide();
+        $('#results').find('a').remove();
+        if (thisTxt != '') {
+            var resCount = 0;
+            for (var item of allPosts) {
+                if (item.title.indexOf(thisTxt) >= 0 || item.html.indexOf(thisTxt) >= 0) {
+                    $('#results,.res-title').show();
+                    resCount++;
+                    var str = $(item.html)[0].innerText;
+                    str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
+                    str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
+                    str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
+                    str = str.replace(/ /ig,'');//去掉 
+                    str = str.replace(/^[\s　]+|[\s　]+$/g, "");//去掉全角半角空格
+                    str = str.replace(/[\r\n]/g,"");//去掉回车换行
+                    $('#results').append('<a class="search-res-item" href="/' + item.slug + '/">' + item.title + '<span class="search-post-content color-gray">（' + str + '）</span></a>')
+                }
+            }
+            $('#res-count').text(resCount);
+        }
     });
-
     //=============底部信息=============
 
     // 说明
 
     //挂载友情链接
-    if(typeof linkArr != "undefined"){
-        if(linkArr.length > 0){
-            for(var i = 0; i < linkArr.length; i++){
-                friendLinkParent.append('<a href="'+ linkArr[i].url +'" target="_blank">'+ linkArr[i].name +'</a>&nbsp;&nbsp;');
+    if (typeof linkArr != "undefined") {
+        if (linkArr.length > 0) {
+            for (var i = 0; i < linkArr.length; i++) {
+                friendLinkParent.append('<a href="' + linkArr[i].url + '" target="_blank">' + linkArr[i].name + '</a>&nbsp;&nbsp;');
             }
         }
     }
     //挂在版权信息
-    if(typeof footCopyRight != "undefined"){
+    if (typeof footCopyRight != "undefined") {
         $('#foot-copy-right').text(footCopyRight);
     }
 
 
     //返回顶部
-    $('.to-top-container').click(function(){
-        $('body,html').animate({scrollTop: 0}, 300);
+    $('.to-top-container').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 300);
     });
 
     var toTopBtn = $('.to-top-container');
@@ -269,41 +504,47 @@ $(function(){
     //监听滚动
     var aTop;
     var listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         var topSize = $(window).scrollTop();
         aTop = topSize;
         // console.log(topSize);
 
         //回到顶部判断
-        if(topSize > 630){
+        if (topSize > 630) {
             toTopBtn.addClass('show');
-        }else{
+        } else {
             toTopBtn.removeClass('show');
         }
 
         //我的资料是否收起 
-        if(topSize >= 520+authorlistH && $('.article-right-box').length > 0){
-            $('.article-right-box').addClass('position-fixed').css({'left': listLeftVal + 828 ,'top':-authorlistH+28});
-        }else if(topSize < 520+authorlistH && $('.article-right-box').length > 0){
+        if (topSize >= 520 + authorlistH && $('.article-right-box').length > 0) {
+            $('.article-right-box').addClass('position-fixed').css({
+                'left': listLeftVal + 828,
+                'top': -authorlistH + 28
+            });
+        } else if (topSize < 520 + authorlistH && $('.article-right-box').length > 0) {
             $('.article-right-box').removeClass('position-fixed');
         }
-        
+
     });
-    $(window).resize(function(){
+    $(window).resize(function () {
         listLeftVal = $('.article-left-box').offset().left;
-        $('.article-right-box').addClass('position-fixed').css({'left': listLeftVal + 828 ,'top':-authorlistH+28});
+        $('.article-right-box').addClass('position-fixed').css({
+            'left': listLeftVal + 828,
+            'top': -authorlistH + 28
+        });
     });
 
     //滚动自动加载
     $('.article-left-box').infiniteScroll({
-        path: '.older-posts',//下一页按钮
-        append: '.articale-item-box',//循环父级容器
-        status: '.page-load-status',//加载中、结束、报错页面
-        hideNav: '.pagination'//隐藏起来的翻页控件
+        path: '.older-posts', //下一页按钮
+        append: '.articale-item-box', //循环父级容器
+        status: '.page-load-status', //加载中、结束、报错页面
+        hideNav: '.pagination' //隐藏起来的翻页控件
     });
 
     //页面加载完成
-    $(window).ready(function(){
+    $(window).ready(function () {
         console.log('dom加载完成');
     });
 });
@@ -327,10 +568,11 @@ var colorArr = [
     '#8ac249',
     '#5f7c8a',
 ];
+
 function colorRadom(secector, type) {
-    var arr = [];//存放随机数的数组
-    var acolorLen = colorArr.length;//数组长度，也用来限制范围
-    var arrLen = secector.length;//数组长度，也用来限制范围
+    var arr = []; //存放随机数的数组
+    var acolorLen = colorArr.length; //数组长度，也用来限制范围
+    var arrLen = secector.length; //数组长度，也用来限制范围
     var radomNum = parseInt(Math.random() * acolorLen);
     for (var i = 0; i < arrLen; i++) {
         secector.eq(i).css(type, colorArr[radomNum]);
@@ -347,24 +589,25 @@ function colorRadom(secector, type) {
 
 //国历
 var strForJieQi;
+
 function setBannerDate() {
     var myDate = new Date();
     var thisYear = myDate.getFullYear();
     var thisMonth = myDate.getMonth() + 1;
-    var thisDate = myDate.getDate() <= 9 ? '0'+ myDate.getDate() : myDate.getDate();
-    var monthWidthZero = thisMonth <= 9 ? '0'+ thisMonth : thisMonth;
+    var thisDate = myDate.getDate() <= 9 ? '0' + myDate.getDate() : myDate.getDate();
+    var monthWidthZero = thisMonth <= 9 ? '0' + thisMonth : thisMonth;
     strForJieQi = monthWidthZero.toString() + thisDate.toString();
     $('.data').text(thisDate + '/');
     $('.guoli-month').text(thisMonth + '月');
     $('.guoli-year').text(thisYear + '');
 
-    
+
 }
 // 首页日历函数 网上找的代码 哈哈哈
 var CalendarData = new Array(100);
 var madd = new Array(12);
-var tgString = "甲乙丙丁戊己庚辛壬癸";//天干
-var dzString = "子丑寅卯辰巳午未申酉戌亥";//地支
+var tgString = "甲乙丙丁戊己庚辛壬癸"; //天干
+var dzString = "子丑寅卯辰巳午未申酉戌亥"; //地支
 var numString = "一二三四五六七八九十";
 var monString = "正二三四五六七八九十冬腊";
 var weekString = "日一二三四五六";
@@ -401,11 +644,12 @@ function e2c() {
     if (TheDate.getYear() % 4 == 0 && TheDate.getMonth() > 1) {
         total++;
     }
-    for (m = 0; ; m++) {
+    for (m = 0;; m++) {
         k = (CalendarData[m] < 0xfff) ? 11 : 12;
         for (n = k; n >= 0; n--) {
             if (total <= 29 + GetBit(CalendarData[m], n)) {
-                isEnd = true; break;
+                isEnd = true;
+                break;
             }
             total = total - 29 - GetBit(CalendarData[m], n);
         }
@@ -425,6 +669,7 @@ function e2c() {
 }
 
 var nongliMonth;
+
 function GetcDateString() {
     var tmp = "";
     tmp += tgString.charAt((cYear - 4) % 10);
@@ -469,48 +714,48 @@ if (yy < 100) yy = "19" + yy;
 $('.nongli').text(GetLunarDay(yy, mm, dd));
 
 //设置季节"正二三四五六七八九十冬腊";
-function setSeasion(season ,jr){
-    for(var i=0; i<jr.length; i++){
-        if(strForJieQi == jr[i].time){
-        // if(1){
+function setSeasion(season, jr) {
+    for (var i = 0; i < jr.length; i++) {
+        if (strForJieQi == jr[i].time) {
+            // if(1){
             setBannerTxtImg(jr[i]);
             return
         }
     }
     // 春
-    if(nongliMonth == "正" || nongliMonth == "二" || nongliMonth == "三" ){
+    if (nongliMonth == "正" || nongliMonth == "二" || nongliMonth == "三") {
         setBannerTxtImg(season[0]);
-    }else
-    //夏
-    if(nongliMonth == "四" || nongliMonth == "五" || nongliMonth == "六" ){
-        setBannerTxtImg(season[1]);
-    }else
-    //秋
-    if(nongliMonth == "七" || nongliMonth == "八" || nongliMonth == "九" ){
-        setBannerTxtImg(season[2]);
-    }else
-    //冬
-    if(nongliMonth == "十" || nongliMonth == "冬" || nongliMonth == "腊" ){
-        setBannerTxtImg(season[3]);
-    }
+    } else
+        //夏
+        if (nongliMonth == "四" || nongliMonth == "五" || nongliMonth == "六") {
+            setBannerTxtImg(season[1]);
+        } else
+            //秋
+            if (nongliMonth == "七" || nongliMonth == "八" || nongliMonth == "九") {
+                setBannerTxtImg(season[2]);
+            } else
+                //冬
+                if (nongliMonth == "十" || nongliMonth == "冬" || nongliMonth == "腊") {
+                    setBannerTxtImg(season[3]);
+                }
 }
 
-function setBannerTxtImg(txt){
+function setBannerTxtImg(txt) {
     // 设置文字
     var desIndex = Math.floor(Math.random() * txt.des.length);
     var bannerListBox = $('#banner-list-box');
-    var tmpBanner='';
+    var tmpBanner = '';
     $('#season').text(txt.name);
     $('#point').text('·');
     $('#season-en').text(txt.en);
     $('#description').text(txt.des[desIndex]);
 
     // console.log(txt.banner)
-    if(txt.banner.length>0){
-        for(var i=0; i<txt.banner.length; i++){
-            tmpBanner += '<div class="swiper-slide">'+
-                '<img src="http://hackbinimg.luokangyuan.com/banner/'+ txt.banner[i] +'">'+
-            '</div>'
+    if (txt.banner.length > 0) {
+        for (var i = 0; i < txt.banner.length; i++) {
+            tmpBanner += '<div class="swiper-slide">' +
+                '<img src="http://hackbinimg.luokangyuan.com/banner/' + txt.banner[i] + '">' +
+                '</div>'
             // console.log(tmpBanner)
         };
 

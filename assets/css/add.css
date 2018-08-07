@@ -280,7 +280,7 @@
 }
 .site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .search-result-box {
   width: 100%;
-  max-height: 300px;
+  max-height: 248px;
   overflow-y: auto;
   background: #fff;
   color: #000;
@@ -293,14 +293,20 @@
   margin: 0;
   border-bottom: 1px solid #f3f3f3;
 }
-.site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .search-result-box > a {
+.site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .search-result-box .search-res-item {
   padding: 0 20px;
   color: #000;
   height: 30px;
   line-height: 30px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .search-result-box > a:hover {
+.site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .search-result-box .search-res-item:hover {
   background: #dedede;
+}
+.site-header .site-nav .site-nav-left .nav .nav- .sub-menu-box .sub-content .right-content .search-result-box .search-res-item .search-post-content {
+  font-size: 12px;
 }
 .site-header:before {
   background: transparent;
