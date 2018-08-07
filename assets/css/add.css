@@ -1002,3 +1002,10 @@
 .post-item-bottom-box {
   cursor: pointer;
 }
+div.code-toolbar {
+  width: 100%;
+}
+.post-full-content img,
+.post-full-content video {
+  width: 100%;
+}

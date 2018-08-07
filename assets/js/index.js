@@ -152,7 +152,7 @@ $(function(){
           
         {'time':'0707', 'name':'小暑',  'en':'Slight heat',       'des':['倏忽温风至，因循小暑来'],                 'banner':['xiaoshu1.jpg','xiaoshu2.jpg','xiaoshu3.jpg']},//小暑
         {'time':'0723', 'name':'大暑',  'en':'Great heat',        'des':['何以销烦暑，端居一院中'],                 'banner':['dashu1.jpg','dashu2.jpg','dashu3.jpg']},//大暑
-        {'time':'0807', 'name':'立秋',  'en':'Autumn begins',     'des':['秋风吹雨过南楼，一夜新凉是立秋'],           'banner':['liqiu1.jpg','liqiu2.jpg','liqiu3.jpg']},//立秋
+        {'time':'0807', 'name':'立秋',  'en':'Autumn begins',     'des':['秋风吹雨过南楼，一夜新凉是立秋','山僧不解数甲子,一叶落知天下秋'],           'banner':['liqiu1.jpg','liqiu2.jpg','liqiu3.jpg']},//立秋
         {'time':'0823', 'name':'处暑',  'en':'Stopping heat', 'des':['处暑无三日，新凉直万金'],                  'banner':['chushu1.jpg','chushu2.jpg','chushu3.jpg']},//处暑
           
         {'time':'0908', 'name':'白露',  'en':'White dews',        'des':['蒹葭苍苍，白露为霜,所谓伊人，在水一方'],     'banner':['bailu1.jpg','bailu2.jpg','bailu3.jpg']},//白露
@@ -188,12 +188,12 @@ $(function(){
         {'name':'秋', 'en':'autumn',  'des':['一声梧叶一声秋，一点芭蕉一点愁','落霞与孤鹜齐飞，秋水共长天一色','山远天高烟水寒，相思枫叶丹'],   'banner':['autumn1.jpg','autumn2.jpg','autumn3.jpg']},//秋
         {'name':'冬', 'en':'winter',  'des':['北国风光，千里冰封，万里雪飘','山回路转不见君，雪上空留马行处','欲将轻骑逐，大雪满弓刀'],         'banner':['winter1.jpg','winter2.jpg','winter3.jpg']},//冬
     ]
-    
-    //设置季节
-    setSeasion(season, jie_ri);
 
     //设置日历
     setBannerDate();
+    
+    //设置季节
+    setSeasion(season, jie_ri);
     //设置颜色随机
     colorRadom($('.contact-item'), 'color'); 
     // colorRadom($('.post-full-header,.post-full-content'), 'border-color');    //文章标题和内容之间的线 
@@ -246,12 +246,16 @@ $(function(){
     // 说明
 
     //挂载友情链接
-    if(typeof linkArr != "defined"){
+    if(typeof linkArr != "undefined"){
         if(linkArr.length > 0){
             for(var i = 0; i < linkArr.length; i++){
                 friendLinkParent.append('<a href="'+ linkArr[i].url +'" target="_blank">'+ linkArr[i].name +'</a>&nbsp;&nbsp;');
             }
         }
+    }
+    //挂在版权信息
+    if(typeof footCopyRight != "undefined"){
+        $('#foot-copy-right').text(footCopyRight);
     }
 
 
@@ -264,7 +268,7 @@ $(function(){
     var persnalPane = $('.article-right-box .personal');
     //监听滚动
     var aTop;
-    var listLeftVal = $('.article-left-box').offset().left;
+    var listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
     $(window).scroll(function(){
         var topSize = $(window).scrollTop();
         aTop = topSize;
