@@ -27,6 +27,14 @@
                                 <p>{{excerpt characters="90"}}</p>
                             </section>
                         </a>
+                        {{!-- 标签 --}}
+                        <div class="phone-post-tages">
+                            {{#if tags}}
+                                {{#foreach tags}}
+                                <a href="{{url}}" target="_blank" class="aib-tag-item color-blue">{{name}}</a>
+                                {{/foreach}}
+                            {{/if}}
+                        </div>
                         {{!-- 作者信息 --}}
                         <footer class="post-card-meta">
                             <div class="top-post-author">
@@ -44,10 +52,12 @@
                                 <span class="reading-time"><b>{{date published_at timeago="true"}}</b></span>
                                 {{!-- 标签 --}}
                                 {{#if tags}}
-                                    {{#foreach tags}}
-                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                    <a href="{{url}}" target="_blank" class="aib-tag-item color-blue">{{name}}</a>
-                                    {{/foreach}}
+                                    <span class="pc-post-tages">
+                                        {{#foreach tags}}
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <a href="{{url}}" target="_blank" class="aib-tag-item color-blue">{{name}}</a>
+                                        {{/foreach}}
+                                    </span>
                                 {{/if}}
                             </div>
                             <span class="read-time-title">
@@ -83,14 +93,14 @@
                     <div class="articale-item-bcontent">
                         <div class="aib-content">
                             {{!-- 文章图片 --}}
-                            <div class="artical-img-box middle-center"
+                            <a href="{{url}}" class="artical-img-box middle-center"
                                 {{#if feature_image}}
                                     style="background-image: url({{feature_image}})"
                                 {{else}}
                                     style="background-image: url(http://hackbinimg.luokangyuan.com/defaultBg.jpg)"
                                 {{/if}}
                             >
-                            </div>
+                            </a>
                             <div class="article-txt-box">
                                 {{!-- 文章标题 --}}
                                 <a href="{{url}}" class="title">
@@ -101,6 +111,14 @@
                                     <a href="{{url}}" class="txt color-gray">
                                         {{excerpt}}
                                     </a>
+                                    {{!-- 标签 --}}
+                                    <div class="phone-post-tages sub">
+                                        {{#if tags}}
+                                            {{#foreach tags}}
+                                            <a href="{{url}}" target="_blank" class="aib-tag-item color-blue">{{name}}</a>
+                                            {{/foreach}}
+                                        {{/if}}
+                                    </div>
                                     <div class="aib-user color-gray">
                                         {{!-- 作者 --}}
                                         {{#author}}
@@ -111,14 +129,14 @@
                                         {{!-- 时间 --}}
                                         <span><i class="icon-rili"></i>&nbsp;{{date published_at timeago="true"}}</span>
                                         {{!-- 文章标签 --}}
-                                        <span class="aib-tages">
-                                            {{#if tags}}
+                                        {{#if tags}}
+                                            <span class="pc-post-tages">
                                                 {{#foreach tags}}
-                                                    <span>&nbsp;·&nbsp;</span>
-                                                    <a href="{{url}}" target="_blank" class="aib-tag-item color-blue">{{name}}</a>
+                                                <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                <a href="{{url}}" target="_blank" class="aib-tag-item color-blue">{{name}}</a>
                                                 {{/foreach}}
-                                            {{/if}}
-                                        </span>
+                                            </span>
+                                        {{/if}}
 
                                         <span class="read-time" title="阅读量">
                                             {{!-- 阅读量 --}}

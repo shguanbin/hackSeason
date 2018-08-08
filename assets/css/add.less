@@ -867,6 +867,7 @@
         }
         .post-full-meta{
             margin: 5px 0 15px;
+            flex-wrap: wrap;
             .post-full-meta-date{
                 color: #000;
             }
@@ -1034,6 +1035,7 @@
     font-weight: bold;
     position: relative;
     justify-content: flex-start;
+    align-items: center;
 }
 .tag-head-bg:before{
     display: block;
@@ -1087,4 +1089,196 @@ div.code-toolbar{
 
 .post-full-content img, .post-full-content video{
     width: 100%;
+}
+.phone-post-tages,.phone-header{
+    display: none;
+}
+//移动端
+@media screen and (max-width:1024px){
+    .site-nav,.article-right-box,.blog-footer-new,.pc-post-tages{
+        display: none !important;
+    }
+    .banner-rili-content{
+        right: -65px !important;
+        bottom: 179px !important;
+        transform: scale(.5);
+    }
+    .banner-top-content .banner-txt-box .tbox-top{
+        border-bottom: 1px solid #f6f6f6;
+    }
+    .index-article-box{
+        margin: 0;
+    }
+    .banner-top-content{
+        padding-right: 40px;
+        margin-top: 90px;
+        height: 260px;
+    }
+    .banner .swiper-container .swiper-wrapper .swiper-slide > img{
+        min-height: 260px !important;
+    }
+    .banner-top-content .banner-txt-box{
+        width: 100%;
+        padding: 20px;
+        height: auto !important;
+        margin-left: 10px;
+        margin-top: 0px;
+    }
+    .banner{
+        height: 260px;
+    }
+    .banner-top-content .banner-txt-box .tbox-top .date-txt {
+        height: 40px;
+        line-height: 40px;
+        font-size: 40px;
+    }
+    .banner-top-content .banner-txt-box .tbox-top .data-txt-en {
+        font-size: 25px;
+        margin: 0 2px;
+    }
+    .banner-top-content .banner-txt-box .tbox-bottom {
+        margin-top: 14px;
+        padding: 0px 0px;
+        font-size: 12px;
+        letter-spacing: 5px;
+    }
+    .site-header{
+        height: 260px !important;
+        .site-title{
+            margin: 0;
+        }
+    }
+    .article-left-box,.post-card,.page-load-status{
+        width: 100% !important;
+    }
+    .container{
+        width: 100% !important;
+        margin-left: 0;
+    }
+    .phone-post-tages{
+        display: flex;
+        padding: 0 0px 15px;
+        flex-wrap: wrap;
+        margin-top: -10px;
+        &.sub{
+            padding: 0;
+            margin-top: 10px;
+        }
+        .aib-tag-item{
+            margin-right: 10px;
+            border: 1px solid @lineColor;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+    }
+    .aib-content{
+        flex-direction: column;
+        height: auto !important;
+        .artical-img-box,.article-txt-box{
+            width: 100% !important;
+            padding:0 !important;
+        }
+        .article-txt-box .aticle-txt{
+            height: auto !important;
+        }
+    }
+    .post-full-content{
+        background: rgba(255, 255, 255, 0.95);
+        margin-top: auto;
+        padding-top: .1px !important;
+        &:hover{
+            background: rgba(255, 255, 255, .95);
+            box-shadow: none;
+            transform: translateY(0px);
+        }
+    }
+    .post-full-image{
+        height: 300px;
+        margin-bottom: 0px;
+    }
+    .index-top-post{
+        padding: 10px 10px 0;
+        .post-card-content-link{
+            padding: 5px 10px;
+        }
+        .post-card-meta{
+            padding: 0 0 30px;
+        }
+    }
+
+    .articale-item-box:hover{
+        transform: translateX(0) !important;
+        box-shadow: rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px !important;
+        transition: all 0.4s ease !important;
+        transform: translate3D(0, -1px, 0) scale(1.02) !important;
+    }
+    .post-card-title{
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .read-time-title{
+        right: 10px;
+    }
+    .phone-header{
+        display: block;
+        position: fixed;
+        top: 0px;
+        height: 50px;
+        width: 100%;
+        background: rgb(255, 255, 255);
+        z-index: 1000;
+        box-shadow: @shadow;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .logi-img{
+            height: 20px;
+        }
+        .site-nav-logo{
+            color: #000;
+            margin-left: 5px;
+        }
+    }
+    .floating-header-content{
+        height: 50px !important;
+        .floating-header-logo{
+            padding: 0 10px !important;
+            height: 50px !important;
+            >span{
+                display: none !important;
+            } 
+        }
+        .floating-header-title{
+            color: #000 !important;
+            visibility: visible !important;
+            font-weight: normal;
+        }
+    }
+    .post-full-title{
+        font-size: 20px !important;
+    }
+    .post-full-footer{
+        padding: 0;
+    }
+    .pinglun-pc{
+        padding: 0;
+    }
+    .author-card-content{
+        p{
+            font-size: 12px;
+        }
+    }
+    .floating-header{
+        height: 50px !important;
+    }
+    .post-full{
+        margin-top: -260px;
+    }
+    .site-header{
+        margin-top: 50px;
+    }
 }
