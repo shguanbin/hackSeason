@@ -88,6 +88,20 @@ $(function () {
     //             ]
     //         }
     //     },
+        // {
+        //     'name':'规范',//一级菜单名字
+        //     'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
+        //     'subMenu':{//下拉二级菜单 不需要就删除
+        //         'brandSrc':'http://hackbinimg.luokangyuan.com/menu/guifan.png',//下拉菜单标识大图 250x300
+        //         'menuItems':[
+        //             {
+        //                 'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/css.png',//二级菜单图标 65x65
+        //                 'itemName':'css规范',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+        //                 'itemLink':'/tag/cssgui-fan/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+        //             },
+        //         ]
+        //     }
+        // },
     //     {
     //         'name':'随笔',//一级菜单名字
     //         'link':'/tag/sui-bi/',//一级菜单链接 不跳转填 [javascript:;]
@@ -441,7 +455,7 @@ $(function () {
             searchBox.focus();
             $.get(ghost.url.api('posts')).done(function (data) {
                 allPosts = data.posts;
-                console.log('posts', allPosts);
+                // console.log('posts', allPosts);
             }).fail(function (err) {
                 alert('其实我也不知道什么错，假装网络不好，刷新试试');
             });
@@ -544,9 +558,9 @@ $(function () {
     });
 
     //页面加载完成
-    $(window).ready(function () {
-        console.log('dom加载完成');
-    });
+    // $(window).ready(function () {
+        // console.log('dom加载完成');
+    // });
 });
 
 // 随机颜色
