@@ -28,7 +28,7 @@
         transform: rotateY(0deg)
     }
     to{
-        transform: rotateY(180deg);
+        transform: rotateY(360deg);
     }
 }
 //返回顶部
@@ -611,13 +611,13 @@
             .ar-tag-items{
                 float: left;
                 font-weight: 500;
-                font-size: 14px;
-                padding: 1px 8px;
+                font-size: 12px;
+                padding: 0px 8px;
                 color: #fff;
                 border-radius: 16px;
                 transition: @animateTime;
                 cursor: pointer;
-                margin: 0 5px 6px !important;
+                margin: 0 3px 5px !important;
                 transition: @animateTime;
                 opacity: .7;
                 &:hover{
@@ -1065,7 +1065,7 @@
     .status-img{
         width: 20px;
         &.loading{
-            animation: loading .5s infinite linear;
+            animation: loading 1s infinite linear;
         }
     }
 }

@@ -15,7 +15,7 @@
     transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
   }
 }
 @keyframes toTopShow {
@@ -563,12 +563,12 @@
 .index-article-box .article-right-box .ar-item-box .ar-tag-items {
   float: left;
   font-weight: 500;
-  font-size: 14px;
-  padding: 1px 8px;
+  font-size: 12px;
+  padding: 0px 8px;
   color: #fff;
   border-radius: 16px;
   cursor: pointer;
-  margin: 0 5px 6px !important;
+  margin: 0 3px 5px !important;
   transition: 0.3s;
   opacity: .7;
 }
@@ -998,7 +998,7 @@
   width: 20px;
 }
 .page-load-status .status-img.loading {
-  animation: loading .5s infinite linear;
+  animation: loading 1s infinite linear;
 }
 .author-header:before {
   background: rgba(0, 0, 0, 0.5);
