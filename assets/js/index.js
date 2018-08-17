@@ -561,6 +561,13 @@ $(function () {
     // $(window).ready(function () {
         // console.log('dom加载完成');
     // });
+
+    //右击logo进入后台
+    $('body').on('contextmenu', '.brand-logo', function (e){
+        e.preventDefault();
+        var backUrl = $('.brand-logo').attr('href') + '/ghost';
+        window.location.href = backUrl;
+    })
 });
 
 // 随机颜色
