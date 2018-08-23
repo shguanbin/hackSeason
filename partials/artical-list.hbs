@@ -175,32 +175,34 @@
         {{!-- 作者列表 --}}
         <div class="ar-item-box ar-author-list">
             <div class="ar-item-title">
-                <span>作者们</span>
+                <span>作者们<small class="color-gray">（发布文章大于0）</small></span>
                 <a href="https://jq.qq.com/?_wv=1027&k=5lq4CQD" target="_blank" class="become-user">加入他们</a>
             </div>
             <div  class="ar-users-list">
                 {{#get "users" include="count.posts" order="count.posts desc"}}
                     {{#foreach users}}
-                        <a href="/author/{{slug}}" class="ar-user-item">
-                            {{#if profile_image}}
-                                <img src="{{profile_image}}" alt="" class="head">
-                            {{else}}
-                                <img src="http://hackbinimg.luokangyuan.com/default-head.png" alt="" class="head">
-                            {{/if}}
-                            <div class="user-msg">
-                                <div class="name-position">
-                                    <span>{{name}}</span>
-                                    <small>( {{count.posts}} 篇文章 ) </small>
+                        {{#if count.posts}}
+                            <a href="/author/{{slug}}" class="ar-user-item">
+                                {{#if profile_image}}
+                                    <img src="{{profile_image}}" alt="" class="head">
+                                {{else}}
+                                    <img src="http://hackbinimg.luokangyuan.com/default-head.png" alt="" class="head">
+                                {{/if}}
+                                <div class="user-msg">
+                                    <div class="name-position">
+                                        <span>{{name}}</span>
+                                        <small>( {{count.posts}} 篇文章 ) </small>
+                                    </div>
+                                    <div class="bio color-gray" title="{{bio}}">
+                                        {{#if bio}}
+                                            {{bio}}
+                                        {{else}}
+                                            bug太多，懒得填写了
+                                        {{/if}}
+                                    </div>
                                 </div>
-                                <div class="bio color-gray" title="{{bio}}">
-                                    {{#if bio}}
-                                        {{bio}}
-                                    {{else}}
-                                        bug太多，懒得填写了
-                                    {{/if}}
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+                        {{/if}}
                     {{/foreach}}
                 {{/get}}
             </div>
@@ -209,7 +211,7 @@
         {{!-- 云标签 --}}
         <div class="ar-item-box tags">
             <div class="ar-item-title">
-                云标签<small class="color-gray">（文章数大于0）</small>
+                云标签<small class="color-gray">（发布文章大于0）</small>
             </div>
             {{! Tag Cloud }}
             {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
@@ -231,13 +233,13 @@
                     <img src="http://hackbinimg.luokangyuan.com/diannao.png" alt="" srcset="">
                     <span class="color-black">安装博客</span>
                 </a>
-                <a class="ar-help-item-box">
-                    <img src="http://hackbinimg.luokangyuan.com/share.png" alt="" srcset="">
-                    <span class="color-black">占位专用</span>
-                </a>
                 <a href="https://github.com/mrbin1573/hackSeason" target="_blank" class="ar-help-item-box">
                     <img src="http://hackbinimg.luokangyuan.com/use-theme.png" alt="" srcset="">
                     <span class="color-black">使用主题</span>
+                </a>
+                <a href="http://searchmore.cn/" target="_blank" class="ar-help-item-box">
+                    <img src="http://hackbinimg.luokangyuan.com/sousuo.png" alt="" srcset="">
+                    <span class="color-black">搜索工具</span>
                 </a>
             </div>
         </div>

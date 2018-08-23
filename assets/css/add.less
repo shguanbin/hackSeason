@@ -851,9 +851,9 @@
     background: rgba(255, 255, 255, 0.5);
     transition: @animateTime;
     &:hover{
-        background: rgba(255, 255, 255, .95);
+        background: rgb(248, 248, 248);
         box-shadow: @shadow;
-        transform: translateY(-5px);
+        // transform: translateY(-5px);
     }
     &:before,&:after{
         background:transparent;
@@ -1095,6 +1095,23 @@ div.code-toolbar{
 }
 .bdsharebuttonbox{
     margin-top: 20px;
+    .share-warn{
+        font-size: 18px;
+        color:#738a94;
+        line-height: 30px;
+        float: left;
+    }
+    >a{
+        height: 30px !important;
+        box-shadow: none !important;
+        background-size: 30px 30px !important;
+        background-position: 0px 0 !important;
+        margin: 0px !important;
+        padding:0 !important;
+        width:50px !important;
+        line-height: 85px !important;
+        text-align: center !important;
+    }
 }
 
 

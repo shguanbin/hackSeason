@@ -52,12 +52,14 @@ into the {body} of the default.hbs template --}}
                 </header>
                 {{content}}
                 <div class="bdsharebuttonbox">
-                    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
-                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-                    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ好友</a>
-                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-                </div><br><br>
+                    <span class="share-warn">分享转载请注明出处：</span>
+                    <a href="#" class="bds_qzone" style="background-image: url('http://hackbinimg.luokangyuan.com/socialicon/share-qzone.png')" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a href="#" class="bds_sqq" style="background-image: url('http://hackbinimg.luokangyuan.com/socialicon/share-qq.png')" data-cmd="sqq" title="分享到QQ好友"></a>
+                    <a href="#" class="bds_weixin" style="background-image: url('http://hackbinimg.luokangyuan.com/socialicon/share-wx.png')" data-cmd="weixin" title="分享到微信"></a>
+                    <a href="#" class="bds_tsina" style="background-image: url('http://hackbinimg.luokangyuan.com/socialicon/share-sina.png')" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="#" class="bds_more" style="background-image: url('http://hackbinimg.luokangyuan.com/share.png')" data-cmd="more"></a>
+                </div>
+                <br><br>
             </section>
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
