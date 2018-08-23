@@ -523,6 +523,20 @@
                                     border-radius: 50%;
                                     margin-right: 10px;
                                 }
+                                .pc-post-tages{
+                                    max-width: 360px;
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    height: 24px;
+                                    line-height: 24px;
+                                    .aib-tag-item{
+                                        display: inline-block;
+                                        max-width: 150px;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                    }
+                                }
                             }
                         }
                     }
@@ -998,8 +1012,10 @@
 }
 .top-post-author{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     height: 33px;
+    width: calc(~'100% - 100px');
     .top-post-user{
         display: flex;
         align-items: center;
@@ -1008,6 +1024,19 @@
             height: 40px;
             width: 40px;
             border-radius: 50%;
+        }
+    }
+    .pc-post-tages{
+        white-space: nowrap;
+        overflow: hidden;
+        height: 33px;
+        line-height: 33px;
+        .aib-tag-item{
+            display: inline-block;
+            max-width: 150px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     }
 }

@@ -495,6 +495,20 @@
   border-radius: 50%;
   margin-right: 10px;
 }
+.index-article-box .article-left-box .articale-item-box .articale-item-bcontent .aib-content .article-txt-box .aticle-txt .aib-user .pc-post-tages {
+  max-width: 360px;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 24px;
+  line-height: 24px;
+}
+.index-article-box .article-left-box .articale-item-box .articale-item-bcontent .aib-content .article-txt-box .aticle-txt .aib-user .pc-post-tages .aib-tag-item {
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .index-article-box .article-left-box .articale-item-box .articale-item-bcontent .article-loop-bg-gs {
   position: absolute;
   top: 0;
@@ -933,8 +947,10 @@
 }
 .top-post-author {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   height: 33px;
+  width: calc(100% - 100px);
 }
 .top-post-author .top-post-user {
   display: flex;
@@ -945,6 +961,19 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+.top-post-author .pc-post-tages {
+  white-space: nowrap;
+  overflow: hidden;
+  height: 33px;
+  line-height: 33px;
+}
+.top-post-author .pc-post-tages .aib-tag-item {
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .author-template .site-header-content .author-profile-image {
   box-sizing: content-box;
