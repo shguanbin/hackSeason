@@ -1,5 +1,5 @@
 # hackSeason ghost博客主题简介
-### [实地考察](http://hackbin.cn/)
+### [实地考察](http://w3more.cn/)
 
 >注意：适用于ghost1.X版本（其低版本未测试），使用完整功能，请打开后台的==Labs>Public PAI==，主题只是对默认主题首页重写，其他页面未做大调整
 
@@ -19,7 +19,7 @@
 * 右侧会有两个固定悬浮菜单，是关于ghost的使用教程，可在artical-list.hbs删除。
 ## 如果你想什么都不做，马上就实用这个博客，下面的内容你也不用看了，你只需要[点击这里](https://jq.qq.com/?_wv=1027&k=5lq4CQD)
 ## 上图片
-并没有图片，看图片难道有[实地考察](http://hackbin.cn/)真实吗？
+并没有图片，看图片难道有[实地考察](http://w3more.cn/)真实吗？
 ##  配置代码（请放入==Code injection>Blog Header==）
 ```js
 <script>
