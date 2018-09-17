@@ -1,7 +1,7 @@
 {
     "name": "hackSeason",
     "description": "根据Ghost博客自带主题进行开发的新主题",
-    "demo": "http://hackbin.cn/",
+    "demo": "http://w3more.cn/",
     "version": "1.0.0",
     "engines": {
         "ghost": ">=1.2.0"
@@ -18,7 +18,7 @@
     "author": {
         "name": "何彬",
         "email": "1573406407@qq.com",
-        "url": "http://hackbin.cn/"
+        "url": "http://w3more.cn/"
     },
     "gpm": {
         "type": "theme",
