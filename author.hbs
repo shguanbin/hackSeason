@@ -23,12 +23,14 @@
             {{/if}}
             <div class="author-meta">
                 {{#if location}}
-                    <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
+                    <div class="author-location">{{location}}</div>
                 {{/if}}
                 <div class="author-stats">
-                    {{plural ../pagination.total empty='暂未发布文章' singular='% 篇文章' plural='% 篇文章'}} <span class="bull">&bull;</span>
+                    <span class="bull">&bull;</span>
+                    {{plural ../pagination.total empty='暂未发布文章' singular='% 篇文章' plural='% 篇文章'}}
                 </div>
                 {{#if website}}
+                <span class="bull">&bull;</span>
                     <a class="social-link social-link-wb" href="{{website}}" target="_blank" rel="noopener">个人网站</a>
                 {{/if}}
                 {{!-- {{#if twitter}}
