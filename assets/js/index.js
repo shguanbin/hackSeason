@@ -334,7 +334,16 @@ $(function () {
             'en': 'army day',
             'des': ['红军不怕远征难，万水千山只等闲', '男儿何不带吴钩，收取关山五十州', '自古英雄多奇志，狂揽九州苍桑月'],
             'banner': ['jianjunjie1.jpg', 'jianjunjie2.jpg', 'jianjunjie3.jpg']
-        }, //大寒
+        }, 
+
+        //中秋节
+        {
+            'time': '0924',
+            'name': '中秋节',
+            'en': 'Mid-Autumn Festival',
+            'des': ['但愿人长久，千里共婵娟', '今夜月明人尽望，不知秋思落谁家', '起舞徘徊风露下，今夕不知何夕'],
+            'banner': ['zhongqiu1.jpg', 'zhongqiu2.jpg', 'zhongqiu3.jpg']
+        }, 
 
         // 国庆
         {
@@ -343,49 +352,49 @@ $(function () {
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, //大寒
+        }, 
         {
             'time': '1002',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, //大寒
+        }, 
         {
             'time': '1003',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, //大寒
+        }, 
         {
             'time': '1004',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, //大寒
+        }, 
         {
             'time': '1005',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, //大寒
+        }, 
         {
             'time': '1006',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, //大寒
+        }, 
         {
             'time': '1007',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, //大寒
+        }, 
     ];
 
     var season = [{
