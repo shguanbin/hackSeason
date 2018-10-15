@@ -793,3 +793,16 @@ function setBannerTxtImg(txt) {
         bannerListBox.append(tmpBanner);
     }
 }
+
+$('body').on('click', '.post-full .post-full-content img', function(){
+    var biggerImg = $(this).attr('src');
+    var imgBiggerPanel = $("<div id='imgBiggerPanel'></div>");
+    imgBiggerPanel.append('<img src="'+ biggerImg +'">')
+    $('body').append(imgBiggerPanel);
+})
+$('body').on('click', '#imgBiggerPanel', function(){
+    var $this = $(this);
+    $this.animate({'top':'100px','opacity':'0'}, 300, function(){
+        $this.remove();
+    });
+})

@@ -1356,3 +1356,34 @@ div.code-toolbar{
 .read-next-card-content ul{
     text-align: left !important;
 }
+.post-full .post-full-content img{
+    cursor: pointer;
+}
+#imgBiggerPanel{
+    position: fixed;
+    z-index: 100000000000;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    cursor: pointer;
+    animation: postImgShow linear .3s;
+    background: rgba(0, 0, 0, 0.1);
+    img{
+        width:95%;
+        margin-left: 2.5%;
+        box-shadow: 0 0 20px #000;
+    }
+}
+
+@keyframes postImgShow{
+    0%{
+        top:30px;
+        opacity: 0;
+    }
+    100%{
+        top:0;
+        opacity: 1;
+    }
+}
