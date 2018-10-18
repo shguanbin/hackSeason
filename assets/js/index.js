@@ -551,11 +551,13 @@ $(function () {
 
     });
     $(window).resize(function () {
-        listLeftVal = $('.article-left-box').offset().left;
-        $('.article-right-box').addClass('position-fixed').css({
-            'left': listLeftVal + 828,
-            'top': -authorlistH + 28
-        });
+        if($('.article-left-box').length){
+            listLeftVal = $('.article-left-box').offset().left;
+            $('.article-right-box').addClass('position-fixed').css({
+                'left': listLeftVal + 828,
+                'top': -authorlistH + 28
+            });
+        }
     });
 
     //滚动自动加载
@@ -793,16 +795,27 @@ function setBannerTxtImg(txt) {
         bannerListBox.append(tmpBanner);
     }
 }
-
+//点击放大图片
 $('body').on('click', '.post-full .post-full-content img', function(){
     var biggerImg = $(this).attr('src');
     var imgBiggerPanel = $("<div id='imgBiggerPanel'></div>");
     imgBiggerPanel.append('<img src="'+ biggerImg +'">')
     $('body').append(imgBiggerPanel);
 })
+//点击删除放大图片
 $('body').on('click', '#imgBiggerPanel', function(){
     var $this = $(this);
     $this.animate({'top':'100px','opacity':'0'}, 300, function(){
         $this.remove();
     });
 })
+//去除ad
+var itvlNum = 0;
+var itvl = setInterval(function (){
+    itvlNum++;
+    if($('#pop_ad').length || itvlNum > 100){
+        console.log($('#pop_ad'));
+        $('#pop_ad').remove();
+        clearInterval(itvl);
+    }
+}, 10);
