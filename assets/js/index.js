@@ -278,7 +278,7 @@ $(function () {
             'time': '1023',
             'name': '霜降',
             'en': 'Hoar-frost falls',
-            'des': ['鸡声茅店月，人述板桥霜'],
+            'des': ['鸡声茅店月，人迹板桥霜'],
             'banner': ['shuangjiang1.jpg', 'shuangjiang2.jpg', 'shuangjiang3.jpg']
         }, //霜降
 
@@ -523,7 +523,6 @@ $(function () {
     });
 
     var toTopBtn = $('.to-top-container');
-    var persnalPane = $('.article-right-box .personal');
     //监听滚动
     var aTop;
     var listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
@@ -533,26 +532,26 @@ $(function () {
         // console.log(topSize);
 
         //回到顶部判断
-        if (topSize > 630) {
+        if (aTop > 630) {
             toTopBtn.addClass('show');
         } else {
             toTopBtn.removeClass('show');
         }
 
-        //我的资料是否收起 
-        if (topSize >= 520 + authorlistH && $('.article-right-box').length > 0) {
+        //tag是否固定
+        if (aTop >= 520 + authorlistH && $('.article-right-box').length > 0) {
             $('.article-right-box').addClass('position-fixed').css({
                 'left': listLeftVal + 828,
                 'top': -authorlistH + 28
             });
-        } else if (topSize < 520 + authorlistH && $('.article-right-box').length > 0) {
+        } else if (aTop < 520 + authorlistH && $('.article-right-box').length > 0) {
             $('.article-right-box').removeClass('position-fixed');
         }
 
     });
     $(window).resize(function () {
-        if($('.article-left-box').length){
-            listLeftVal = $('.article-left-box').offset().left;
+        listLeftVal = $('.article-left-box').offset().left;
+        if(aTop >= 520 + authorlistH && $('.article-right-box').length > 0){
             $('.article-right-box').addClass('position-fixed').css({
                 'left': listLeftVal + 828,
                 'top': -authorlistH + 28

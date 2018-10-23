@@ -347,6 +347,7 @@
 .banner-top-content .banner-txt-box .tbox-top .data-txt-en {
   font-size: 50px;
   word-spacing: 20px;
+  word-break: break-all;
   margin: 0 15px;
   text-transform: capitalize;
 }
@@ -1165,7 +1166,9 @@ div.code-toolbar {
     flex-direction: column;
     height: auto !important;
   }
-  .aib-content .artical-img-box,
+  .aib-content .artical-img-box {
+    display: none !important;
+  }
   .aib-content .article-txt-box {
     width: 100% !important;
     padding: 0 !important;
@@ -1267,6 +1270,12 @@ div.code-toolbar {
   }
   .site-header {
     margin-top: 50px;
+  }
+  .banner-top-content .banner-rili-content:hover {
+    transform: scale(0.52) !important;
+  }
+  .bdsharebuttonbox {
+    display: none !important;
   }
 }
 .read-next-card-content ul {
