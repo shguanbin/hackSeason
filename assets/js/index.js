@@ -1,5 +1,6 @@
 $(function () {
-    var friendLinkParent = $('.friend-link'); //友情链接挂载ele
+    var friendLinkParent = $('.friend-link'); //友情链接挂载，底部
+    var friendLinkParentSide = $('#friend-link-side'); //友情链接挂载，侧边
     var authorlistH = $('.ar-author-list').height() + 30 //;邮编作者列表高度（加上padding）
 
     // var topNemuArr = [
@@ -456,45 +457,88 @@ $(function () {
         },
     });
 
-    var allPosts;
+
+    //搜索
+    var allPosts = new Array();
     var searchBox = $("#search-field");
+    $.get(ghost.url.api('posts'), {limit: 'all'}).done(function (data) {
+        allPosts = data.posts;
+    }).fail(function (err) {
+    });
     $('#search-menu').hover(
         //鼠标覆盖
         function () {
             searchBox.focus();
-            $.get(ghost.url.api('posts')).done(function (data) {
-                allPosts = data.posts;
-                // console.log('posts', allPosts);
-            }).fail(function (err) {
-                alert('其实我也不知道什么错，假装网络不好，刷新试试');
-            });
         },
         // 鼠标离开
         function () {
             searchBox.blur();
         }
     )
-    $("#search-field").on('input porpertychange', function () {
-        var thisTxt = searchBox.val().trim();
-        $('#results,.res-title').hide();
-        $('#results').find('a').remove();
+    var $resTitle = $('#results,.res-title');
+    var $result = $('#results');
+    var str = '';//接受去除空格换行等
+    var resCount = 0;//搜索统计数
+    var $resCount = $('#res-count');
+    var thisTxt = '';//搜索关键词
+    var indexInTitle = 0;//搜索字符索引 标题
+    var indexInHtml = 0;//在文章
+    var titleRes = '';
+    var htmlRes = '';
+    searchBox.on('input porpertychange', function () {
+        thisTxt = searchBox.val().trim();
+        $resTitle.hide();
+        $result.find('a').remove();
         if (thisTxt != '') {
-            var resCount = 0;
-            for (var item of allPosts) {
-                if (item.title.indexOf(thisTxt) >= 0 || item.html.indexOf(thisTxt) >= 0) {
-                    $('#results,.res-title').show();
+            resCount = 0;
+            allPosts.forEach(function(item) {
+                indexInTitle = item.title.indexOf(thisTxt);
+                indexInHtml = item.html.indexOf(thisTxt);
+                //标题
+                if (indexInTitle >= 0) {
+                    $resTitle.show();
                     resCount++;
-                    var str = $(item.html)[0].innerText;
+                    str = $(item.html)[0].innerText;
                     str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
                     str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
                     str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
                     str = str.replace(/ /ig,'');//去掉 
                     str = str.replace(/^[\s　]+|[\s　]+$/g, "");//去掉全角半角空格
                     str = str.replace(/[\r\n]/g,"");//去掉回车换行
-                    $('#results').append('<a class="search-res-item" href="/' + item.slug + '/">' + item.title + '<span class="search-post-content color-gray">（' + str + '）</span></a>')
+                    titleRes += '<a class="search-res-item" href="/' + item.slug + '/">' 
+                    + item.title.replace(thisTxt,'<span style="color:red">' +thisTxt+ '</span>') 
+                    + '<span class="search-post-content color-gray"> ' 
+                    + str 
+                    + '</span></a>'
+                }else// 内容
+                if (indexInHtml >= 0 && indexInTitle <= 0) {
+                    $resTitle.show();
+                    resCount++;
+                    str = $(item.html)[0].innerText;
+                    str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
+                    str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
+                    str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
+                    str = str.replace(/ /ig,'');//去掉 
+                    str = str.replace(/^[\s　]+|[\s　]+$/g, "");//去掉全角半角空格
+                    str = str.replace(/[\r\n]/g,"");//去掉回车换行
+                    console.log(str)
+                    console.log(indexInHtml)
+                    console.log(str.substring(indexInHtml))
+                    htmlRes += '<a class="search-res-item" href="/' + item.slug + '/">' 
+                    + item.title 
+                    + '<span class="search-post-content color-gray"> ' 
+                    + '<span style="color:red;">' +thisTxt+ '</span>'
+                    + str.substring(indexInHtml)
+                    + '</span></a>'
                 }
+            })
+            //挂载搜索结果
+            if(titleRes){
+                $result.append(titleRes);
+            }else if(htmlRes){
+                $result.append(htmlRes);
             }
-            $('#res-count').text(resCount);
+            $resCount.text(resCount);
         }
     });
     //=============底部信息=============
@@ -506,6 +550,11 @@ $(function () {
         if (linkArr.length > 0) {
             for (var i = 0; i < linkArr.length; i++) {
                 friendLinkParent.append('<a href="' + linkArr[i].url + '" target="_blank">' + linkArr[i].name + '</a>&nbsp;&nbsp;');
+                friendLinkParentSide.append('\
+                <a href="'+ linkArr[i].url +'" target="_blank" class="ar-help-item-box">\
+                    <span class="link-name color-black">' + linkArr[i].name +'</span>\
+                </a>\
+                ')
             }
         }
     }
@@ -812,8 +861,8 @@ $('body').on('click', '#imgBiggerPanel', function(){
 var itvlNum = 0;
 var itvl = setInterval(function (){
     itvlNum++;
-    if($('#pop_ad').length || itvlNum > 100){
-        console.log($('#pop_ad'));
+    if($('#pop_ad').length || itvlNum > 1000){
+        // console.log($('#pop_ad'));
         $('#pop_ad').remove();
         clearInterval(itvl);
     }

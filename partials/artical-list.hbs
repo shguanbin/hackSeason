@@ -175,7 +175,7 @@
         {{!-- 作者列表 --}}
         <div class="ar-item-box ar-author-list">
             <div class="ar-item-title">
-                <span>作者们<small class="color-gray">（发布文章大于0）</small></span>
+                <span>作者榜<small class="color-gray">（发布文章大于0）</small></span>
                 <a href="https://jq.qq.com/?_wv=1027&k=5lq4CQD" target="_blank" class="become-user">加入他们</a>
             </div>
             <div  class="ar-users-list">
@@ -215,32 +215,37 @@
             </div>
             {{! Tag Cloud }}
             {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
-                {{#foreach tags}}
-                    {{#if count.posts}}
-                        <a href="/tag/{{slug}}" class="tag-item ar-tag-items">{{name}} ({{count.posts}})</a>
-                    {{/if}}
-                {{/foreach}}
+                <div class="tag-flex-box">
+                    {{#foreach tags}}
+                        {{#if count.posts}}
+                                <a href="/tag/{{slug}}" class="tag-item ar-tag-items">{{name}} ({{count.posts}})</a>
+                        {{/if}}
+                    {{/foreach}}
+                </div>
             {{/get}}
         </div>
 
         {{!-- 使用主题 --}}
         <div class="ar-item-box">
             <div class="ar-item-title">
-                其他项
+                友链接
             </div>
-            <div class="ar-item-helper">
-                <a href="http://w3more.cn/tag/ghost-tag/" class="ar-help-item-box">
+            <div class="ar-item-helper" id="friend-link-side">
+                {{!-- <a href="http://w3more.cn/tag/ghost-tag/" class="ar-help-item-box">
                     <img src="http://hackbinimg.luokangyuan.com/diannao.png" alt="" srcset="">
-                    <span class="color-black">安装博客</span>
+                    <span class="link-name color-black">安装博客</span>
                 </a>
                 <a href="https://github.com/mrbin1573/hackSeason" target="_blank" class="ar-help-item-box">
                     <img src="http://hackbinimg.luokangyuan.com/use-theme.png" alt="" srcset="">
-                    <span class="color-black">使用主题</span>
+                    <span class="link-name color-black">使用主题</span>
                 </a>
                 <a href="http://searchmore.cn/" target="_blank" class="ar-help-item-box">
                     <img src="http://hackbinimg.luokangyuan.com/sousuo.png" alt="" srcset="">
-                    <span class="color-black">搜索工具</span>
-                </a>
+                    <span class="link-name color-black">搜索工具</span>
+                </a> --}}
+            </div>
+            <div class="visit-count">
+                <span id="busuanzi_container_site_uv"><b>阁下乃本站第 <span id="busuanzi_value_site_uv"></span> 位造访者，荣幸之至</b></span>
             </div>
         </div>
 
