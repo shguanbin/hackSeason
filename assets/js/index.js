@@ -461,13 +461,13 @@ $(function () {
     //搜索
     var allPosts = new Array();
     var searchBox = $("#search-field");
-    $.get(ghost.url.api('posts'), {limit: 'all'}).done(function (data) {
-        allPosts = data.posts;
-    }).fail(function (err) {
-    });
     $('#search-menu').hover(
         //鼠标覆盖
         function () {
+            $.get(ghost.url.api('posts'), {limit: 'all'}).done(function (data) {
+                allPosts = data.posts;
+            }).fail(function (err) {
+            });
             searchBox.focus();
         },
         // 鼠标离开
@@ -490,7 +490,6 @@ $(function () {
         $resTitle.hide();
         $result.find('a').remove();
         if (thisTxt != '') {
-            resCount = 0;
             allPosts.forEach(function(item) {
                 indexInTitle = item.title.indexOf(thisTxt);
                 indexInHtml = item.html.indexOf(thisTxt);
@@ -498,7 +497,7 @@ $(function () {
                 if (indexInTitle >= 0) {
                     $resTitle.show();
                     resCount++;
-                    str = $(item.html)[0].innerText;
+                    str = item.html;
                     str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
                     str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
                     str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
@@ -514,31 +513,30 @@ $(function () {
                 if (indexInHtml >= 0 && indexInTitle <= 0) {
                     $resTitle.show();
                     resCount++;
-                    str = $(item.html)[0].innerText;
-                    str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
+                    str = item.html;
+                    str = str.replace(/<[^>]+>/g,""); //去除HTML tag
                     str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
                     str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
                     str = str.replace(/ /ig,'');//去掉 
                     str = str.replace(/^[\s　]+|[\s　]+$/g, "");//去掉全角半角空格
                     str = str.replace(/[\r\n]/g,"");//去掉回车换行
-                    console.log(str)
-                    console.log(indexInHtml)
-                    console.log(str.substring(indexInHtml))
                     htmlRes += '<a class="search-res-item" href="/' + item.slug + '/">' 
                     + item.title 
                     + '<span class="search-post-content color-gray"> ' 
-                    + '<span style="color:red;">' +thisTxt+ '</span>'
-                    + str.substring(indexInHtml)
+                    + str
                     + '</span></a>'
                 }
             })
             //挂载搜索结果
-            if(titleRes){
+            if(titleRes != ''){
                 $result.append(titleRes);
-            }else if(htmlRes){
+                titleRes = '';
+            }else if(htmlRes != ''){
                 $result.append(htmlRes);
+                htmlRes = '';
             }
             $resCount.text(resCount);
+            resCount = 0;
         }
     });
     //=============底部信息=============
@@ -568,7 +566,7 @@ $(function () {
     $('.to-top-container').click(function () {
         $('body,html').animate({
             scrollTop: 0
-        }, 300);
+        }, 1000);
     });
 
     var toTopBtn = $('.to-top-container');
@@ -599,7 +597,7 @@ $(function () {
 
     });
     $(window).resize(function () {
-        listLeftVal = $('.article-left-box').offset().left;
+        listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
         if(aTop >= 520 + authorlistH && $('.article-right-box').length > 0){
             $('.article-right-box').addClass('position-fixed').css({
                 'left': listLeftVal + 828,
@@ -615,11 +613,6 @@ $(function () {
         status: '.page-load-status', //加载中、结束、报错页面
         hideNav: '.pagination' //隐藏起来的翻页控件
     });
-
-    //页面加载完成
-    // $(window).ready(function () {
-        // console.log('dom加载完成');
-    // });
 
     //右击logo进入后台
     $('body').on('contextmenu', '.brand-logo', function (e){

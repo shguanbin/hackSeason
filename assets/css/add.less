@@ -1064,13 +1064,27 @@
     .site-header-content{
         .author-profile-image{
             box-sizing: content-box;
-            padding: 10px;
+            padding: 5px;
             box-shadow:  @shadow !important;
-            background: rgba(255, 255, 255, 0.110101010);
+            background: rgb(255, 255, 255);
         }
     }
 }
 
+@keyframes uheadborder {
+    0% {
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    30%{
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    100%{
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+}
 .read-time{
     position: absolute;
     right: 5px;
