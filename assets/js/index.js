@@ -1,7 +1,7 @@
 $(function () {
     var friendLinkParent = $('.friend-link'); //友情链接挂载，底部
     var friendLinkParentSide = $('#friend-link-side'); //友情链接挂载，侧边
-    var authorlistH = $('.ar-author-list').height() + 30 //;邮编作者列表高度（加上padding）
+    var authorlistH = $('.ar-author-list').height() + 30; //;邮编作者列表高度（加上padding）
 
     // var topNemuArr = [
     //     {
@@ -89,20 +89,20 @@ $(function () {
     //             ]
     //         }
     //     },
-        // {
-        //     'name':'规范',//一级菜单名字
-        //     'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
-        //     'subMenu':{//下拉二级菜单 不需要就删除
-        //         'brandSrc':'http://hackbinimg.luokangyuan.com/menu/guifan.png',//下拉菜单标识大图 250x300
-        //         'menuItems':[
-        //             {
-        //                 'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/css.png',//二级菜单图标 65x65
-        //                 'itemName':'css规范',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-        //                 'itemLink':'/tag/cssgui-fan/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-        //             },
-        //         ]
-        //     }
-        // },
+    // {
+    //     'name':'规范',//一级菜单名字
+    //     'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
+    //     'subMenu':{//下拉二级菜单 不需要就删除
+    //         'brandSrc':'http://hackbinimg.luokangyuan.com/menu/guifan.png',//下拉菜单标识大图 250x300
+    //         'menuItems':[
+    //             {
+    //                 'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/css.png',//二级菜单图标 65x65
+    //                 'itemName':'css规范',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
+    //                 'itemLink':'/tag/cssgui-fan/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
+    //             },
+    //         ]
+    //     }
+    // },
     //     {
     //         'name':'随笔',//一级菜单名字
     //         'link':'/tag/sui-bi/',//一级菜单链接 不跳转填 [javascript:;]
@@ -121,12 +121,12 @@ $(function () {
                 $rightMenuitemBox = $('<div class="right-content"></div>'),
                 subBrandImg, //下拉菜单logo
                 $subMenu = $('<div class="sub-menu-box"></div>'), //二级菜单根元素
-                $liEle = $('<li class="nav- nav-current" role="menuitem"></li>'); //生成菜单根元素
+                $liEle = $('<li class="nav-" role="menuitem"></li>'); //生成菜单根元素
 
             $liEle.append('<a href="' + menuArr[i].link + '">' + menuArr[i].name + '</a>'); //设置一级菜单
             if (menuArr[i].subMenu) {
                 subBrandImg = '<div class="left-pic middle-center">\
-                <img src="' + menuArr[i].subMenu.brandSrc + '" alt="" srcset="">\
+                <img data-src="' + menuArr[i].subMenu.brandSrc + '" alt="" srcset="">\
                 </div>'
                 $subMenuRoot.append(subBrandImg);
 
@@ -134,7 +134,7 @@ $(function () {
                 for (var j = 0; j < menuArr[i].subMenu.menuItems.length; j++) {
                     subMenuString += '<a href="' + menuArr[i].subMenu.menuItems[j].itemLink + '" class="mune-item">\
                         <div class="img-box middle-center">\
-                            <img src="' + menuArr[i].subMenu.menuItems[j].itemImgSrc + '" alt="" srcset="">\
+                            <img data-src="' + menuArr[i].subMenu.menuItems[j].itemImgSrc + '" alt="" srcset="">\
                             </div>\
                         <span>' + menuArr[i].subMenu.menuItems[j].itemName + '</span>\
                     </a>'
@@ -335,7 +335,7 @@ $(function () {
             'en': 'army day',
             'des': ['红军不怕远征难，万水千山只等闲', '男儿何不带吴钩，收取关山五十州', '自古英雄多奇志，狂揽九州苍桑月'],
             'banner': ['jianjunjie1.jpg', 'jianjunjie2.jpg', 'jianjunjie3.jpg']
-        }, 
+        },
 
         //中秋节
         {
@@ -344,7 +344,7 @@ $(function () {
             'en': 'Mid-Autumn Festival',
             'des': ['但愿人长久，千里共婵娟', '今夜月明人尽望，不知秋思落谁家', '起舞徘徊风露下，今夕不知何夕'],
             'banner': ['zhongqiu1.jpg', 'zhongqiu2.jpg', 'zhongqiu3.jpg']
-        }, 
+        },
 
         // 国庆
         {
@@ -353,75 +353,75 @@ $(function () {
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, 
+        },
         {
             'time': '1002',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, 
+        },
         {
             'time': '1003',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, 
+        },
         {
             'time': '1004',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, 
+        },
         {
             'time': '1005',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, 
+        },
         {
             'time': '1006',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, 
+        },
         {
             'time': '1007',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
             'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
-        }, 
+        },
     ];
 
     var season = [{
-            'name': '春',
-            'en': 'spring',
-            'des': ['小楼一夜听春雨，深巷明朝卖杏花', '最是一年春好处，绝胜烟柳满皇都', '燕子飞时，绿水人家绕'],
-            'banner': ['spring1.jpg', 'spring2.jpg', 'spring3.jpg']
-        }, //春
-        {
-            'name': '夏',
-            'en': 'summer',
-            'des': ['小荷才露尖尖角，早有蜻蜓立上头', '连雨不知春去，一晴方觉夏深', '稻花香里说丰年。听取蛙声一片'],
-            'banner': ['summer1.jpg', 'summer2.jpg', 'summer3.jpg']
-        }, //夏
-        {
-            'name': '秋',
-            'en': 'autumn',
-            'des': ['一声梧叶一声秋，一点芭蕉一点愁', '落霞与孤鹜齐飞，秋水共长天一色', '山远天高烟水寒，相思枫叶丹'],
-            'banner': ['autumn1.jpg', 'autumn2.jpg', 'autumn3.jpg']
-        }, //秋
-        {
-            'name': '冬',
-            'en': 'winter',
-            'des': ['北国风光，千里冰封，万里雪飘', '山回路转不见君，雪上空留马行处', '欲将轻骑逐，大雪满弓刀'],
-            'banner': ['winter1.jpg', 'winter2.jpg', 'winter3.jpg']
-        }, //冬
+        'name': '春',
+        'en': 'spring',
+        'des': ['小楼一夜听春雨，深巷明朝卖杏花', '最是一年春好处，绝胜烟柳满皇都', '燕子飞时，绿水人家绕'],
+        'banner': ['spring1.jpg', 'spring2.jpg', 'spring3.jpg']
+    }, //春
+    {
+        'name': '夏',
+        'en': 'summer',
+        'des': ['小荷才露尖尖角，早有蜻蜓立上头', '连雨不知春去，一晴方觉夏深', '稻花香里说丰年。听取蛙声一片'],
+        'banner': ['summer1.jpg', 'summer2.jpg', 'summer3.jpg']
+    }, //夏
+    {
+        'name': '秋',
+        'en': 'autumn',
+        'des': ['一声梧叶一声秋，一点芭蕉一点愁', '落霞与孤鹜齐飞，秋水共长天一色', '山远天高烟水寒，相思枫叶丹'],
+        'banner': ['autumn1.jpg', 'autumn2.jpg', 'autumn3.jpg']
+    }, //秋
+    {
+        'name': '冬',
+        'en': 'winter',
+        'des': ['北国风光，千里冰封，万里雪飘', '山回路转不见君，雪上空留马行处', '欲将轻骑逐，大雪满弓刀'],
+        'banner': ['winter1.jpg', 'winter2.jpg', 'winter3.jpg']
+    }, //冬
     ]
 
     //设置日历
@@ -445,16 +445,6 @@ $(function () {
         },
         effect: 'fade',
         speed: 1000,
-        // 如果需要分页器
-        // pagination: {
-        //     el: '.swiper-pagination',
-        //     clickable :true,
-        // },
-        // 如果需要前进后退按钮
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
     });
 
 
@@ -464,7 +454,7 @@ $(function () {
     $('#search-menu').hover(
         //鼠标覆盖
         function () {
-            $.get(ghost.url.api('posts'), {limit: 'all'}).done(function (data) {
+            $.get(ghost.url.api('posts'), { limit: 'all' }).done(function (data) {
                 allPosts = data.posts;
             }).fail(function (err) {
             });
@@ -490,7 +480,7 @@ $(function () {
         $resTitle.hide();
         $result.find('a').remove();
         if (thisTxt != '') {
-            allPosts.forEach(function(item) {
+            allPosts.forEach(function (item) {
                 indexInTitle = item.title.indexOf(thisTxt);
                 indexInHtml = item.html.indexOf(thisTxt);
                 //标题
@@ -498,40 +488,40 @@ $(function () {
                     $resTitle.show();
                     resCount++;
                     str = item.html;
-                    str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
-                    str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
-                    str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
-                    str = str.replace(/ /ig,'');//去掉 
+                    str = str.replace(/<\/?[^>]*>/g, ''); //去除HTML tag
+                    str = str.replace(/[ | ]*\n/g, '\n'); //去除行尾空白
+                    str = str.replace(/\n[\s| | ]*\r/g, '\n'); //去除多余空行
+                    str = str.replace(/ /ig, '');//去掉 
                     str = str.replace(/^[\s　]+|[\s　]+$/g, "");//去掉全角半角空格
-                    str = str.replace(/[\r\n]/g,"");//去掉回车换行
-                    titleRes += '<a class="search-res-item" href="/' + item.slug + '/">' 
-                    + item.title.replace(thisTxt,'<span style="color:red">' +thisTxt+ '</span>') 
-                    + '<span class="search-post-content color-gray"> ' 
-                    + str 
-                    + '</span></a>'
-                }else// 内容
-                if (indexInHtml >= 0 && indexInTitle <= 0) {
-                    $resTitle.show();
-                    resCount++;
-                    str = item.html;
-                    str = str.replace(/<[^>]+>/g,""); //去除HTML tag
-                    str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
-                    str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
-                    str = str.replace(/ /ig,'');//去掉 
-                    str = str.replace(/^[\s　]+|[\s　]+$/g, "");//去掉全角半角空格
-                    str = str.replace(/[\r\n]/g,"");//去掉回车换行
-                    htmlRes += '<a class="search-res-item" href="/' + item.slug + '/">' 
-                    + item.title 
-                    + '<span class="search-post-content color-gray"> ' 
-                    + str
-                    + '</span></a>'
-                }
+                    str = str.replace(/[\r\n]/g, "");//去掉回车换行
+                    titleRes += '<a class="search-res-item" href="/' + item.slug + '/">'
+                        + item.title.replace(thisTxt, '<span style="color:red">' + thisTxt + '</span>')
+                        + '<span class="search-post-content color-gray"> '
+                        + str
+                        + '</span></a>'
+                } else// 内容
+                    if (indexInHtml >= 0 && indexInTitle <= 0) {
+                        $resTitle.show();
+                        resCount++;
+                        str = item.html;
+                        str = str.replace(/<[^>]+>/g, ""); //去除HTML tag
+                        str = str.replace(/[ | ]*\n/g, '\n'); //去除行尾空白
+                        str = str.replace(/\n[\s| | ]*\r/g, '\n'); //去除多余空行
+                        str = str.replace(/ /ig, '');//去掉 
+                        str = str.replace(/^[\s　]+|[\s　]+$/g, "");//去掉全角半角空格
+                        str = str.replace(/[\r\n]/g, "");//去掉回车换行
+                        htmlRes += '<a class="search-res-item" href="/' + item.slug + '/">'
+                            + item.title
+                            + '<span class="search-post-content color-gray"> '
+                            + str
+                            + '</span></a>'
+                    }
             })
             //挂载搜索结果
-            if(titleRes != ''){
+            if (titleRes != '') {
                 $result.append(titleRes);
                 titleRes = '';
-            }else if(htmlRes != ''){
+            } else if (htmlRes != '') {
                 $result.append(htmlRes);
                 htmlRes = '';
             }
@@ -549,8 +539,8 @@ $(function () {
             for (var i = 0; i < linkArr.length; i++) {
                 friendLinkParent.append('<a href="' + linkArr[i].url + '" target="_blank">' + linkArr[i].name + '</a>&nbsp;&nbsp;');
                 friendLinkParentSide.append('\
-                <a href="'+ linkArr[i].url +'" target="_blank" class="ar-help-item-box">\
-                    <span class="link-name color-black">' + linkArr[i].name +'</span>\
+                <a href="'+ linkArr[i].url + '" target="_blank" class="ar-help-item-box">\
+                    <span class="link-name color-black">' + linkArr[i].name + '</span>\
                 </a>\
                 ')
             }
@@ -598,7 +588,7 @@ $(function () {
     });
     $(window).resize(function () {
         listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
-        if(aTop >= 520 + authorlistH && $('.article-right-box').length > 0){
+        if (aTop >= 520 + authorlistH && $('.article-right-box').length > 0) {
             $('.article-right-box').addClass('position-fixed').css({
                 'left': listLeftVal + 828,
                 'top': -authorlistH + 28
@@ -615,7 +605,7 @@ $(function () {
     });
 
     //右击logo进入后台
-    $('body').on('contextmenu', '.brand-logo', function (e){
+    $('body').on('contextmenu', '.brand-logo', function (e) {
         e.preventDefault();
         var backUrl = $('.brand-logo').attr('href') + '/ghost';
         window.location.href = backUrl;
@@ -656,9 +646,6 @@ function colorRadom(secector, type) {
         }
     }
 }
-// colorRadom($('.contact-item'), 'color');
-// colorRadom($('.aib-tag-item'), 'border-color');
-// colorRadom($('.chip'), 'background');
 
 //国历
 var strForJieQi;
@@ -673,8 +660,6 @@ function setBannerDate() {
     $('.data').text(thisDate + '/');
     $('.guoli-month').text(thisMonth + '月');
     $('.guoli-year').text(thisYear + '');
-
-
 }
 // 首页日历函数 网上找的代码 哈哈哈
 var CalendarData = new Array(100);
@@ -717,7 +702,7 @@ function e2c() {
     if (TheDate.getYear() % 4 == 0 && TheDate.getMonth() > 1) {
         total++;
     }
-    for (m = 0;; m++) {
+    for (m = 0; ; m++) {
         k = (CalendarData[m] < 0xfff) ? 11 : 12;
         for (n = k; n >= 0; n--) {
             if (total <= 29 + GetBit(CalendarData[m], n)) {
@@ -826,10 +811,10 @@ function setBannerTxtImg(txt) {
     // console.log(txt.banner)
     if (txt.banner.length > 0) {
         for (var i = 0; i < txt.banner.length; i++) {
-            tmpBanner += '<div class="swiper-slide">' +
+            tmpBanner +=
+                '<div class="swiper-slide">' +
                 '<img src="http://hackbinimg.luokangyuan.com/banner/' + txt.banner[i] + '">' +
                 '</div>'
-            // console.log(tmpBanner)
         };
 
         bannerListBox.find('.swiper-slide').remove();
@@ -837,26 +822,39 @@ function setBannerTxtImg(txt) {
     }
 }
 //点击放大图片
-$('body').on('click', '.post-full .post-full-content img', function(){
+$('body').on('click', '.post-full .post-full-content img', function () {
     var biggerImg = $(this).attr('src');
     var imgBiggerPanel = $("<div id='imgBiggerPanel'></div>");
-    imgBiggerPanel.append('<img src="'+ biggerImg +'">')
+    imgBiggerPanel.append('<img src="' + biggerImg + '">')
     $('body').append(imgBiggerPanel);
 })
 //点击删除放大图片
-$('body').on('click', '#imgBiggerPanel', function(){
+$('body').on('click', '#imgBiggerPanel', function () {
     var $this = $(this);
-    $this.animate({'top':'100px','opacity':'0'}, 300, function(){
+    $this.animate({ 'top': '100px', 'opacity': '0' }, 300, function () {
         $this.remove();
     });
 })
 //去除ad
 var itvlNum = 0;
-var itvl = setInterval(function (){
+var itvl = setInterval(function () {
     itvlNum++;
-    if($('#pop_ad').length || itvlNum > 1000){
+    if ($('#pop_ad').length || itvlNum > 1000) {
         // console.log($('#pop_ad'));
         $('#pop_ad').remove();
         clearInterval(itvl);
     }
 }, 10);
+
+
+//鼠标覆盖菜单，显示图片
+
+$('body').on('mouseenter', '.nav-', function () {
+    var img = $(this).find('img');
+
+    if(img.length > 0){
+        img.each(function() {
+            $(this).attr('src', $(this).attr('data-src')).removeAttr('data-src')
+        })
+    }
+})

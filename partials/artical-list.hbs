@@ -42,9 +42,9 @@
                                 {{#author}}
                                     <a href="{{url}}" class="top-post-user color-gray">
                                         {{#if profile_image}}
-                                                <img class="top-post-head" src="{{profile_image}}" alt="{{name}}" />
+                                                <img class="top-post-head" src="{{profile_image}}?imageView2/1/w/40/h/40/q/75|imageslim" alt="{{name}}" />
                                         {{else}}
-                                                <img class="top-post-head" src="http://hackbinimg.luokangyuan.com/default-head.png" alt="{{name}}" />
+                                                <img class="top-post-head" src="http://hackbinimg.luokangyuan.com/default-head.png?imageView2/1/w/40/h/40/q/75|imageslim" alt="{{name}}" />
                                         {{/if}}
                                         <span>&nbsp;&nbsp;{{name}}</span>
                                     </a>
@@ -184,9 +184,9 @@
                         {{#if count.posts}}
                             <a href="/author/{{slug}}" class="ar-user-item">
                                 {{#if profile_image}}
-                                    <img src="{{profile_image}}" alt="" class="head">
+                                    <img src="{{profile_image}}?imageView2/1/w/40/h/40/q/75|imageslim" alt="" class="head">
                                 {{else}}
-                                    <img src="http://hackbinimg.luokangyuan.com/default-head.png" alt="" class="head">
+                                    <img src="http://hackbinimg.luokangyuan.com/default-head.png?imageView2/1/w/40/h/40/q/75|imageslim" alt="" class="head">
                                 {{/if}}
                                 <div class="user-msg">
                                     <div class="name-position">
@@ -211,7 +211,7 @@
         {{!-- 云标签 --}}
         <div class="ar-item-box tags">
             <div class="ar-item-title">
-                云标签<small class="color-gray">（发布文章大于0）</small>
+                标签云<small class="color-gray">（发布文章大于0）</small>
             </div>
             {{! Tag Cloud }}
             {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
