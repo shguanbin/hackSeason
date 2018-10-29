@@ -29,14 +29,62 @@
     }
 }
 //返回顶部
-@keyframes toTopShow{
+@keyframes toTop{
     from{
         opacity:0;
-        transform: translateY(0px);
+        transform: translateY(30px);
     }
     to{
         opacity: 1;
-        transform: translateY(-10px);
+        transform: translateY(0px);
+    }
+}
+
+//向右
+@keyframes toRight{
+    from{
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+// 向左
+@keyframes toLeft{
+    from{
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+//向下
+@keyframes toBottom{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+//缩小
+@keyframes toSmall{
+    from{
+        opacity: 0;
+        transform: scale(1.3);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
     }
 }
 .clearfix:after{
@@ -55,6 +103,7 @@
 .post-card-excerpt,.post-full-meta-date{
     font-family: '微软雅黑';
 }
+
 .menu-add-box{
     display: flex;
 }
@@ -87,15 +136,16 @@
 }
 .site-main{
     background: transparent;
+    animation: toTop 1.5s;
 }
 // banner
 .banner{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background:#f4f8fb;
     // background: url('http://hackbinimg.luokangyuan.com/banner/bannerBefore.jpg') no-repeat;
     // background-size: 100%;
+    animation: toSmall 3s;
     .swiper-container{
         .swiper-wrapper{
             .swiper-slide{
@@ -142,6 +192,7 @@
     height: 500px;
     margin:0;
     padding: 0;
+    background: #fff;
     .site-nav{
         position: fixed;
         width: 100%;
@@ -153,6 +204,7 @@
         overflow: visible !important;
         display: flex;
         justify-content: center;
+        animation: toBottom 1.5s;
         .site-nav-left{
             width: 100%;
             margin:0;
@@ -333,8 +385,11 @@
             }
         }
     }
+    &::before{
+        background: transparent !important;
+    }
 }
-.site-header:before{
+.toTop:before{
     background: transparent;
 }
 .home-template .site-nav{
@@ -360,6 +415,7 @@
         background: rgba(0, 0, 0, 0.3);
         color: #f6f6f6;
         transition: @animateTime;
+        animation: toRight 1.5s;
         .tbox-top{
             border-bottom: 2px solid #f6f6f6;
             padding-bottom: 15px;
@@ -403,6 +459,7 @@
         box-shadow: @shadow;
         transition: @animateTime;
         text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
+        animation: toLeft 1.5s;
         &:hover{
             background: rgba(255, 255, 255, 0.4);
             color: #ca582b;
@@ -952,8 +1009,8 @@
     &.show{
         opacity:.8;
         visibility: visible;
-        transform: translateY(-10px);
-        animation: toTopShow @animateTime;
+        transform: translateY(-30px);
+        animation: toTop @animateTime;
         &:hover{
             opacity: 1;
         }
@@ -1059,7 +1116,7 @@
 }
 
 .author-template{
-    .site-header-content{
+    .toTop-content{
         .author-profile-image{
             box-sizing: content-box;
             padding: 5px;
@@ -1116,7 +1173,7 @@
     margin-top: 10px;
 }
 .page-load-status{
-    width: calc(~'100% - 320px');
+    width: 100%;
     display: none; /* hidden by default */
     padding-top: 20px;
     border-top: 1px solid #DDD;
@@ -1129,7 +1186,9 @@
         }
     }
 }
-
+.index-loader-finish{
+    width: calc(~'100% - 320px');
+}
 .author-header:before{
     background: rgba(0, 0, 0, 0.5);
 }
@@ -1235,7 +1294,7 @@ div.code-toolbar{
         font-size: 12px;
         letter-spacing: 5px;
     }
-    .site-header{
+    .toTop{
         height: 260px !important;
         .site-title{
             margin: 0;
@@ -1374,7 +1433,7 @@ div.code-toolbar{
     .post-full{
         margin-top: -260px;
     }
-    .site-header{
+    .toTop{
         margin-top: 50px;
     }
     .banner-top-content .banner-rili-content:hover {

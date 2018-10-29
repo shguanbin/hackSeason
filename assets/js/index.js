@@ -596,10 +596,18 @@ $(function () {
         }
     });
 
-    //滚动自动加载
+    //滚动自动加载 首页
     $('.article-left-box').infiniteScroll({
         path: '.older-posts', //下一页按钮
-        append: '.articale-item-box', //循环父级容器
+        append: '.articale-item-box', //循环体
+        status: '.page-load-status', //加载中、结束、报错页面
+        hideNav: '.pagination' //隐藏起来的翻页控件
+    });
+
+    //滚动自动加载 tag 作者文章
+    $('.post-feed').infiniteScroll({
+        path: '.older-posts', //下一页按钮
+        append: '.post-card', //循环体
         status: '.page-load-status', //加载中、结束、报错页面
         hideNav: '.pagination' //隐藏起来的翻页控件
     });

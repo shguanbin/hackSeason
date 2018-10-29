@@ -55,9 +55,35 @@
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
-
             {{/foreach}}
+            {{ pagination}} 
         </div>
 
+        <div class="page-load-status">
+            <p class="infinite-scroll-request">
+                {{#if @blog.icon}}
+                    <img  class="status-img loading" src="{{@blog.icon}}" alt="{{@blog.title}}" />
+                {{else}}
+                    <img class="status-img loading" src="http://pcqg5j51d.bkt.clouddn.com/20180731220789/logoblue.png" alt="" srcset="">
+                {{/if}}
+                加载中...
+            </p>
+            <p class="infinite-scroll-last">
+                {{#if @blog.icon}}
+                    <img  class="status-img" src="{{@blog.icon}}" alt="{{@blog.title}}" />
+                {{else}}
+                    <img class="status-img" src="http://pcqg5j51d.bkt.clouddn.com/20180731220789/logoblue.png" alt="" srcset="">
+                {{/if}}
+                没有更多文章了
+            </p>
+            <p class="infinite-scroll-error">
+                {{#if @blog.icon}}
+                    <img  class="status-img" src="{{@blog.icon}}" alt="{{@blog.title}}" />
+                {{else}}
+                    <img class="status-img" src="http://pcqg5j51d.bkt.clouddn.com/20180731220789/logoblue.png" alt="" srcset="">
+                {{/if}}
+                貌似出错了，点下首页或者刷新试试？
+            </p>
+        </div>
     </div>
 </main>
