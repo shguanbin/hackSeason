@@ -80,7 +80,7 @@
 @keyframes toSmall{
     from{
         opacity: 0;
-        transform: scale(1.3);
+        transform: scale(1.1);
     }
     to{
         opacity: 1;
@@ -147,8 +147,12 @@
    border: none !important;
 }
 .site-main{
-    background: transparent;
     animation: toTop 1.5s;
+    background: transparent !important;
+}
+body{
+    background: rgb(232, 238, 230);
+    overflow: hidden;
 }
 // banner
 .banner{
@@ -161,7 +165,7 @@
         .swiper-wrapper{
             .swiper-slide{
                 >img{
-                    animation: toSmall 3s;
+                    animation: toSmall 3s ease-out;
                     width: 100%;
                     min-height: 100vh;
                 }
@@ -204,7 +208,7 @@
     height: 500px;
     margin:0;
     padding: 0;
-    background: #fff;
+    background: rgb(232, 238, 230);
     animation: headerToSmall 2s;
     background-position: center;
     background-size: 100%;
@@ -401,7 +405,7 @@
         }
     }
     &::before{
-        background: transparent !important;
+        background: transparent;
     }
 }
 .toTop:before{
@@ -955,7 +959,7 @@
     background: rgba(255, 255, 255, 0.5);
     transition: @animateTime;
     &:hover{
-        background: rgb(248, 248, 248);
+        background: rgb(255, 255, 255);
         box-shadow: @shadow;
         // transform: translateY(-5px);
     }

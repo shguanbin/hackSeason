@@ -1,154 +1,8 @@
-$(function () {
+$(function(){
     var friendLinkParent = $('.friend-link'); //友情链接挂载，底部
     var friendLinkParentSide = $('#friend-link-side'); //友情链接挂载，侧边
     var authorlistH = $('.ar-author-list').height() + 30; //;邮编作者列表高度（加上padding）
 
-    // var topNemuArr = [
-    //     {
-    //         'name':'前端',//一级菜单名字
-    //         'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
-    //         'subMenu':{//下拉二级菜单 不需要就删除
-    //             'brandSrc':'http://hackbinimg.luokangyuan.com/menu/qianduan.png',//下拉菜单标识大图 250x300
-    //             'menuItems':[
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/html.png',//二级菜单图标 65x65
-    //                     'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/html/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/css.png',//二级菜单图标 65x65
-    //                     'itemName':'CSS',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/css/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/js.png',//二级菜单图标 65x65
-    //                     'itemName':'JavaScript',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/JavaScript/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/jq.png',//二级菜单图标 65x65
-    //                     'itemName':'jQuery',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/jQuery/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/vue.png',//二级菜单图标 65x65
-    //                     'itemName':'Vue',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/Vue/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/node.png',//二级菜单图标 65x65
-    //                     'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/Node/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/ng.png',//二级菜单图标 65x65
-    //                     'itemName':'HTML',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/Angular/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-
-    //             ]
-    //         }
-    //     },
-    //     {
-    //         'name':'后端',//一级菜单名字
-    //         'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
-    //         'subMenu':{//下拉二级菜单 不需要就删除
-    //             'brandSrc':'http://hackbinimg.luokangyuan.com/menu/houtai.png',//下拉菜单标识大图 250x300
-    //             'menuItems':[
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/java.png',//二级菜单图标 65x65
-    //                     'itemName':'Java',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/java/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/mybatis.png',//二级菜单图标 65x65
-    //                     'itemName':'Mybatis',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/mybatis/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/spring.png',//二级菜单图标 65x65
-    //                     'itemName':'spring',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/spring/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/springBoot.png',//二级菜单图标 65x65
-    //                     'itemName':'SpringBoot',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/springBoot/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/springCloud.png',//二级菜单图标 65x65
-    //                     'itemName':'SpringCloud',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/springCloud/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 },
-    //                 {
-    //                     'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/linux.png',//二级菜单图标 65x65
-    //                     'itemName':'Linux',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                     'itemLink':'/tag/linux/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //                 }
-
-    //             ]
-    //         }
-    //     },
-    // {
-    //     'name':'规范',//一级菜单名字
-    //     'link':'javascript:;',//一级菜单链接 不跳转填 [javascript:;]
-    //     'subMenu':{//下拉二级菜单 不需要就删除
-    //         'brandSrc':'http://hackbinimg.luokangyuan.com/menu/guifan.png',//下拉菜单标识大图 250x300
-    //         'menuItems':[
-    //             {
-    //                 'itemImgSrc':'http://hackbinimg.luokangyuan.com/menu/css.png',//二级菜单图标 65x65
-    //                 'itemName':'css规范',//二级菜单名字 区分大小写 一般使用标签作为二级菜单
-    //                 'itemLink':'/tag/cssgui-fan/'//二级菜单跳转链接 本站标签页不用加域名 标签名不区分大小写
-    //             },
-    //         ]
-    //     }
-    // },
-    //     {
-    //         'name':'随笔',//一级菜单名字
-    //         'link':'/tag/sui-bi/',//一级菜单链接 不跳转填 [javascript:;]
-    //     }
-    // ]
-
-    //设置顶部菜单按钮
-    if (typeof topNemuArr != 'undefined') {
-        setTopMenu(topNemuArr);
-    }
-
-    function setTopMenu(menuArr) {
-        var rootEle = $('.menu-add-box'); //菜单挂载元素
-        for (var i = 0; i < menuArr.length; i++) {
-            var $subMenuRoot = $('<div class="inner sub-content"></div>'),
-                $rightMenuitemBox = $('<div class="right-content"></div>'),
-                subBrandImg, //下拉菜单logo
-                $subMenu = $('<div class="sub-menu-box"></div>'), //二级菜单根元素
-                $liEle = $('<li class="nav-" role="menuitem"></li>'); //生成菜单根元素
-
-            $liEle.append('<a href="' + menuArr[i].link + '">' + menuArr[i].name + '</a>'); //设置一级菜单
-            if (menuArr[i].subMenu) {
-                subBrandImg = '<div class="left-pic middle-center">\
-                <img data-src="' + menuArr[i].subMenu.brandSrc + '" alt="" srcset="">\
-                </div>'
-                $subMenuRoot.append(subBrandImg);
-
-                subMenuString = ''; //二级菜单累加结果
-                for (var j = 0; j < menuArr[i].subMenu.menuItems.length; j++) {
-                    subMenuString += '<a href="' + menuArr[i].subMenu.menuItems[j].itemLink + '" class="mune-item">\
-                        <div class="img-box middle-center">\
-                            <img data-src="' + menuArr[i].subMenu.menuItems[j].itemImgSrc + '" alt="" srcset="">\
-                            </div>\
-                        <span>' + menuArr[i].subMenu.menuItems[j].itemName + '</span>\
-                    </a>'
-                }
-                $rightMenuitemBox.append(subMenuString);
-                $subMenuRoot.append($rightMenuitemBox);
-                $subMenu.append($subMenuRoot);
-                $liEle.append($subMenu);
-            }
-
-            rootEle.append($liEle);
-
-        }
-    }
     //24节气 + 法定节假日
     var jie_ri = [
 
@@ -424,11 +278,133 @@ $(function () {
     }, //冬
     ]
 
+    //搜索
+    var allPosts = new Array();
+    var searchBox = $("#search-field");
+
+    var $resTitle = $('#results,.res-title');
+    var $result = $('#results');
+    var str = '';//接受去除空格换行等
+    var resCount = 0;//搜索统计数
+    var $resCount = $('#res-count');
+    var thisTxt = '';//搜索关键词
+    var indexInTitle = 0;//搜索字符索引 标题
+    var indexInHtml = 0;//在文章
+    var titleRes = '';
+    var htmlRes = '';
+
+    var toTopBtn = $('.to-top-container');
+    //监听滚动
+    var aTop;
+    var listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
+
+    // 随机颜色
+    var colorArr = [
+        '#663ab6',
+        '#00bbd3',
+        '#f34236',
+        '#9b27af',
+        '#2195f2',
+        '#009587',
+        '#4bae4f',
+        '#fe9700',
+        '#fe5622',
+        '#3e50b4',
+        '#ccdb39',
+        '#fe5622',
+        '#fec007',
+        '#03a8f3',
+        '#8ac249',
+        '#5f7c8a',
+    ];
+    // 首页日历函数 网上找的代码 哈哈哈
+    var CalendarData = new Array(100);
+    var madd = new Array(12);
+    madd[0] = 0;
+    madd[1] = 31;
+    madd[2] = 59;
+    madd[3] = 90;
+    madd[4] = 120;
+    madd[5] = 151;
+    madd[6] = 181;
+    madd[7] = 212;
+    madd[8] = 243;
+    madd[9] = 273;
+    madd[10] = 304;
+    madd[11] = 334;
+
+    var tgString = "甲乙丙丁戊己庚辛壬癸"; //天干
+    var dzString = "子丑寅卯辰巳午未申酉戌亥"; //地支
+    var numString = "一二三四五六七八九十";
+    var monString = "正二三四五六七八九十冬腊";
+    var weekString = "日一二三四五六";
+    var sx = "鼠牛虎兔龙蛇马羊猴鸡狗猪";
+    var cYear, cMonth, cDay, TheDate;
+    CalendarData = new Array(0xA4B, 0x5164B, 0x6A5, 0x6D4, 0x415B5, 0x2B6, 0x957, 0x2092F, 0x497, 0x60C96, 0xD4A, 0xEA5, 0x50DA9, 0x5AD, 0x2B6, 0x3126E, 0x92E, 0x7192D, 0xC95, 0xD4A, 0x61B4A, 0xB55, 0x56A, 0x4155B, 0x25D, 0x92D, 0x2192B, 0xA95, 0x71695, 0x6CA, 0xB55, 0x50AB5, 0x4DA, 0xA5B, 0x30A57, 0x52B, 0x8152A, 0xE95, 0x6AA, 0x615AA, 0xAB5, 0x4B6, 0x414AE, 0xA57, 0x526, 0x31D26, 0xD95, 0x70B55, 0x56A, 0x96D, 0x5095D, 0x4AD, 0xA4D, 0x41A4D, 0xD25, 0x81AA5, 0xB54, 0xB6A, 0x612DA, 0x95B, 0x49B, 0x41497, 0xA4B, 0xA164B, 0x6A5, 0x6D4, 0x615B4, 0xAB6, 0x957, 0x5092F, 0x497, 0x64B, 0x30D4A, 0xEA5, 0x80D65, 0x5AC, 0xAB6, 0x5126D, 0x92E, 0xC96, 0x41A95, 0xD4A, 0xDA5, 0x20B55, 0x56A, 0x7155B, 0x25D, 0x92D, 0x5192B, 0xA95, 0xB4A, 0x416AA, 0xAD5, 0x90AB5, 0x4BA, 0xA5B, 0x60A57, 0x52B, 0xA93, 0x40E95);
+
+    //国历
+    var strForJieQi;
+
+    var D = new Date();
+    var yy = D.getFullYear();
+    var mm = D.getMonth() + 1;
+    var dd = D.getDate();
+    var ww = D.getDay();
+    var ss = parseInt(D.getTime() / 1000);
+
+    //农历
+    if (yy < 100) yy = "19" + yy;
+    $('.nongli').text(GetLunarDay(yy, mm, dd));
+
+    //设置季节+banner
+    setSeasion(season, jie_ri);
+
     //设置日历
     setBannerDate();
+   
+    //设置顶部菜单按钮
+    if (typeof topNemuArr != 'undefined') {
+        setTopMenu(topNemuArr);
+    }
 
-    //设置季节
-    setSeasion(season, jie_ri);
+    function setTopMenu(menuArr) {
+        var rootEle = $('.menu-add-box'); //菜单挂载元素
+        for (var i = 0; i < menuArr.length; i++) {
+            var $subMenuRoot = $('<div class="inner sub-content"></div>'),
+                $rightMenuitemBox = $('<div class="right-content"></div>'),
+                subBrandImg, //下拉菜单logo
+                $subMenu = $('<div class="sub-menu-box"></div>'), //二级菜单根元素
+                $liEle = $('<li class="nav-" role="menuitem"></li>'); //生成菜单根元素
+
+            $liEle.append('<a href="' + menuArr[i].link + '">' + menuArr[i].name + '</a>'); //设置一级菜单
+            if (menuArr[i].subMenu) {
+                subBrandImg = '<div class="left-pic middle-center">\
+                <img data-src="' + menuArr[i].subMenu.brandSrc + '" alt="" srcset="">\
+                </div>'
+                $subMenuRoot.append(subBrandImg);
+
+                subMenuString = ''; //二级菜单累加结果
+                for (var j = 0; j < menuArr[i].subMenu.menuItems.length; j++) {
+                    subMenuString += '<a href="' + menuArr[i].subMenu.menuItems[j].itemLink + '" class="mune-item">\
+                        <div class="img-box middle-center">\
+                            <img data-src="' + menuArr[i].subMenu.menuItems[j].itemImgSrc + '" alt="" srcset="">\
+                            </div>\
+                        <span>' + menuArr[i].subMenu.menuItems[j].itemName + '</span>\
+                    </a>'
+                }
+                $rightMenuitemBox.append(subMenuString);
+                $subMenuRoot.append($rightMenuitemBox);
+                $subMenu.append($subMenuRoot);
+                $liEle.append($subMenu);
+            }
+
+            rootEle.append($liEle);
+
+        }
+    }
+
+
+
     //设置颜色随机
     colorRadom($('.contact-item'), 'color');
     // colorRadom($('.post-full-header,.post-full-content'), 'border-color');    //文章标题和内容之间的线 
@@ -448,9 +424,6 @@ $(function () {
     });
 
 
-    //搜索
-    var allPosts = new Array();
-    var searchBox = $("#search-field");
     $('#search-menu').hover(
         //鼠标覆盖
         function () {
@@ -465,16 +438,7 @@ $(function () {
             searchBox.blur();
         }
     )
-    var $resTitle = $('#results,.res-title');
-    var $result = $('#results');
-    var str = '';//接受去除空格换行等
-    var resCount = 0;//搜索统计数
-    var $resCount = $('#res-count');
-    var thisTxt = '';//搜索关键词
-    var indexInTitle = 0;//搜索字符索引 标题
-    var indexInHtml = 0;//在文章
-    var titleRes = '';
-    var htmlRes = '';
+
     searchBox.on('input porpertychange', function () {
         thisTxt = searchBox.val().trim();
         $resTitle.hide();
@@ -559,10 +523,6 @@ $(function () {
         }, 1000);
     });
 
-    var toTopBtn = $('.to-top-container');
-    //监听滚动
-    var aTop;
-    var listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
     $(window).scroll(function () {
         var topSize = $(window).scrollTop();
         aTop = topSize;
@@ -618,27 +578,8 @@ $(function () {
         var backUrl = $('.brand-logo').attr('href') + '/ghost';
         window.location.href = backUrl;
     })
-});
 
-// 随机颜色
-var colorArr = [
-    '#663ab6',
-    '#00bbd3',
-    '#f34236',
-    '#9b27af',
-    '#2195f2',
-    '#009587',
-    '#4bae4f',
-    '#fe9700',
-    '#fe5622',
-    '#3e50b4',
-    '#ccdb39',
-    '#fe5622',
-    '#fec007',
-    '#03a8f3',
-    '#8ac249',
-    '#5f7c8a',
-];
+
 
 function colorRadom(secector, type) {
     var arr = []; //存放随机数的数组
@@ -655,9 +596,6 @@ function colorRadom(secector, type) {
     }
 }
 
-//国历
-var strForJieQi;
-
 function setBannerDate() {
     var myDate = new Date();
     var thisYear = myDate.getFullYear();
@@ -669,30 +607,6 @@ function setBannerDate() {
     $('.guoli-month').text(thisMonth + '月');
     $('.guoli-year').text(thisYear + '');
 }
-// 首页日历函数 网上找的代码 哈哈哈
-var CalendarData = new Array(100);
-var madd = new Array(12);
-var tgString = "甲乙丙丁戊己庚辛壬癸"; //天干
-var dzString = "子丑寅卯辰巳午未申酉戌亥"; //地支
-var numString = "一二三四五六七八九十";
-var monString = "正二三四五六七八九十冬腊";
-var weekString = "日一二三四五六";
-var sx = "鼠牛虎兔龙蛇马羊猴鸡狗猪";
-var cYear, cMonth, cDay, TheDate;
-CalendarData = new Array(0xA4B, 0x5164B, 0x6A5, 0x6D4, 0x415B5, 0x2B6, 0x957, 0x2092F, 0x497, 0x60C96, 0xD4A, 0xEA5, 0x50DA9, 0x5AD, 0x2B6, 0x3126E, 0x92E, 0x7192D, 0xC95, 0xD4A, 0x61B4A, 0xB55, 0x56A, 0x4155B, 0x25D, 0x92D, 0x2192B, 0xA95, 0x71695, 0x6CA, 0xB55, 0x50AB5, 0x4DA, 0xA5B, 0x30A57, 0x52B, 0x8152A, 0xE95, 0x6AA, 0x615AA, 0xAB5, 0x4B6, 0x414AE, 0xA57, 0x526, 0x31D26, 0xD95, 0x70B55, 0x56A, 0x96D, 0x5095D, 0x4AD, 0xA4D, 0x41A4D, 0xD25, 0x81AA5, 0xB54, 0xB6A, 0x612DA, 0x95B, 0x49B, 0x41497, 0xA4B, 0xA164B, 0x6A5, 0x6D4, 0x615B4, 0xAB6, 0x957, 0x5092F, 0x497, 0x64B, 0x30D4A, 0xEA5, 0x80D65, 0x5AC, 0xAB6, 0x5126D, 0x92E, 0xC96, 0x41A95, 0xD4A, 0xDA5, 0x20B55, 0x56A, 0x7155B, 0x25D, 0x92D, 0x5192B, 0xA95, 0xB4A, 0x416AA, 0xAD5, 0x90AB5, 0x4BA, 0xA5B, 0x60A57, 0x52B, 0xA93, 0x40E95);
-madd[0] = 0;
-madd[1] = 31;
-madd[2] = 59;
-madd[3] = 90;
-madd[4] = 120;
-madd[5] = 151;
-madd[6] = 181;
-madd[7] = 212;
-madd[8] = 243;
-madd[9] = 273;
-madd[10] = 304;
-madd[11] = 334;
-
 function GetBit(m, n) {
     return (m >> n) & 1;
 }
@@ -770,14 +684,6 @@ function GetLunarDay(solarYear, solarMonth, solarDay) {
     }
 }
 
-var D = new Date();
-var yy = D.getFullYear();
-var mm = D.getMonth() + 1;
-var dd = D.getDate();
-var ww = D.getDay();
-var ss = parseInt(D.getTime() / 1000);
-if (yy < 100) yy = "19" + yy;
-$('.nongli').text(GetLunarDay(yy, mm, dd));
 
 //设置季节"正二三四五六七八九十冬腊";
 function setSeasion(season, jr) {
@@ -825,7 +731,6 @@ function setBannerTxtImg(txt) {
                 '</div>'
         };
 
-        bannerListBox.find('.swiper-slide').remove();
         bannerListBox.append(tmpBanner);
     }
 }
@@ -860,9 +765,11 @@ var itvl = setInterval(function () {
 $('body').on('mouseenter', '.nav-', function () {
     var img = $(this).find('img');
 
-    if(img.length > 0){
-        img.each(function() {
+    if (img.length > 0) {
+        img.each(function () {
             $(this).attr('src', $(this).attr('data-src')).removeAttr('data-src')
         })
     }
+})
+
 })
