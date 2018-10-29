@@ -87,6 +87,18 @@
         transform: scale(1);
     }
 }
+
+// tag author页面背景图片缩小
+@keyframes headerToSmall{
+    from{
+        opacity: 0;
+        background-size: 110%;
+    }
+    to{
+        opacity: 1;
+        background-size: 100%;
+    }
+}
 .clearfix:after{
     content:'';
     position: relative;
@@ -145,11 +157,11 @@
     overflow: hidden;
     // background: url('http://hackbinimg.luokangyuan.com/banner/bannerBefore.jpg') no-repeat;
     // background-size: 100%;
-    animation: toSmall 3s;
     .swiper-container{
         .swiper-wrapper{
             .swiper-slide{
                 >img{
+                    animation: toSmall 3s;
                     width: 100%;
                     min-height: 100vh;
                 }
@@ -193,6 +205,9 @@
     margin:0;
     padding: 0;
     background: #fff;
+    animation: headerToSmall 2s;
+    background-position: center;
+    background-size: 100%;
     .site-nav{
         position: fixed;
         width: 100%;
@@ -916,6 +931,7 @@
     margin-left: calc(~'50% - 50vw');
     // margin-top: -260px;
     width: 100vw;
+    animation: toSmall 2s;
 }
 .postimg-box{
     width: 100vw;
