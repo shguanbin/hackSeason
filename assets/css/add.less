@@ -4,6 +4,8 @@
 
 // 变量
 @animateTime:.3s;
+@aniTimeBanner:1s;
+@aniTimeBannerBg:2s;
 // @shadow:0 0 5px rgba(0, 0, 0, 0.2);
 @shadow:8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
 @lineColor:#dddddd;
@@ -31,8 +33,8 @@
 //返回顶部
 @keyframes toTop{
     from{
-        opacity:0;
-        transform: translateY(30px);
+        opacity: 0;
+        transform: translateY(50px);
     }
     to{
         opacity: 1;
@@ -44,7 +46,7 @@
 @keyframes toRight{
     from{
         opacity: 0;
-        transform: translateX(-30px);
+        transform: translateX(-50px);
     }
     to{
         opacity: 1;
@@ -56,7 +58,7 @@
 @keyframes toLeft{
     from{
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(50px);
     }
     to{
         opacity: 1;
@@ -91,12 +93,19 @@
 // tag author页面背景图片缩小
 @keyframes headerToSmall{
     from{
-        opacity: 0;
         background-size: 110%;
     }
     to{
-        opacity: 1;
         background-size: 100%;
+    }
+}
+
+@keyframes toUnOpacity{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
 .clearfix:after{
@@ -147,7 +156,7 @@
    border: none !important;
 }
 .site-main{
-    animation: toTop 1.5s;
+    animation: toTop @aniTimeBanner;
     background: transparent !important;
 }
 body{
@@ -165,7 +174,7 @@ body{
         .swiper-wrapper{
             .swiper-slide{
                 >img{
-                    animation: toSmall 3s ease-out;
+                    animation: toSmall @aniTimeBannerBg ease-out;
                     width: 100%;
                     min-height: 100vh;
                 }
@@ -223,7 +232,7 @@ body{
         overflow: visible !important;
         display: flex;
         justify-content: center;
-        animation: toBottom 1.5s;
+        animation: toBottom 2s;
         .site-nav-left{
             width: 100%;
             margin:0;
@@ -415,8 +424,8 @@ body{
     top:0;
 }
 .container{
-    width: 1128px !important;
-    margin-left: calc(~'50% - 564px');
+    width: 1228px !important;
+    margin-left: calc(~'50% - 614px');
 }
 
 //banner上面的信息
@@ -434,9 +443,9 @@ body{
         background: rgba(0, 0, 0, 0.3);
         color: #f6f6f6;
         transition: @animateTime;
-        animation: toRight 1.5s;
+        animation: toRight @aniTimeBanner;
+        overflow: hidden;
         .tbox-top{
-            border-bottom: 2px solid #f6f6f6;
             padding-bottom: 15px;
             .date-txt{
                 height: 140px;
@@ -451,6 +460,9 @@ body{
                 margin: 0 15px;
                 text-transform: capitalize;
             }
+        }
+        .line{
+            border-bottom: 2px solid #f6f6f6;
         }
         .tbox-bottom{
             margin-top: 30px;
@@ -478,7 +490,7 @@ body{
         box-shadow: @shadow;
         transition: @animateTime;
         text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
-        animation: toLeft 1.5s;
+        animation: toLeft @aniTimeBanner;
         &:hover{
             background: rgba(255, 255, 255, 0.4);
             color: #ca582b;
@@ -932,10 +944,9 @@ body{
 
 // 文章详情
 .post-full-image{
-    margin-left: calc(~'50% - 50vw');
+    margin-left: calc(~'50% - 42vw');
     // margin-top: -260px;
-    width: 100vw;
-    animation: toSmall 2s;
+    width: 104vw;
 }
 .postimg-box{
     width: 100vw;
@@ -946,7 +957,7 @@ body{
         width: 100vw;
     }
 }
-    .post-full-header{
+.post-full-header{
     background: rgba(255, 255, 255, 0.95);
     position: relative;
     z-index: 100;
@@ -955,8 +966,8 @@ body{
 }
 .post-full-content{
     margin-top: -400px;
-    padding-top: 20px;
-    background: rgba(255, 255, 255, 0.5);
+    padding: 20px 20px 0;
+    background: rgba(255, 255, 255, 0.8);
     transition: @animateTime;
     &:hover{
         background: rgb(255, 255, 255);
@@ -987,7 +998,8 @@ body{
     }
 }
 .inner{
-    max-width: 1128px;
+    max-width: 1228px;
+    position: relative;
 }
 
 // 尾巴
@@ -1029,7 +1041,7 @@ body{
     &.show{
         opacity:.8;
         visibility: visible;
-        transform: translateY(-30px);
+        // transform: translateY(-30px);
         animation: toTop @animateTime;
         &:hover{
             opacity: 1;
@@ -1225,7 +1237,9 @@ body{
 div.code-toolbar{
     width: 100%;
 }
-
+.post-full{
+    width: 908px;
+}
 .post-full-content img, .post-full-content video{
     width: 100%;
 }
@@ -1253,7 +1267,9 @@ div.code-toolbar{
     }
 }
 
-
+.outer{
+    z-index: 10;
+}
 
 
 
@@ -1267,6 +1283,9 @@ div.code-toolbar{
 
 //移动端
 @media screen and (max-width:1024px){
+    .outer{
+        padding: 0 !important;
+    }
     .site-nav,.article-right-box,.blog-footer-new,.pc-post-tages{
         display: none !important;
     }
@@ -1452,6 +1471,7 @@ div.code-toolbar{
     }
     .post-full{
         margin-top: -260px;
+        width: 100%;
     }
     .toTop{
         margin-top: 50px;
@@ -1495,5 +1515,84 @@ div.code-toolbar{
     100%{
         top:0;
         opacity: 1;
+    }
+}
+.toc-container{
+    position: absolute;
+    z-index: 1000;
+    width: 300px;
+    margin-left: calc(~'50% + 314px');
+    top: 400px;
+    background: rgba(255, 255, 255, .8);
+    padding: 5px 0px  5px 30px;
+    font-size: 16px;
+    user-select: none;
+    box-shadow: @shadow;
+    &:hover{
+        background: rgb(255, 255, 255);
+    }
+    #toc{
+        #tocify-header0{
+            font-weight: bold;
+            &:before{
+                content: "";
+                position: absolute;
+                width: 5px;
+                left:0;
+                margin-top: 5px;
+                height: 20px;
+                background: red;
+            }
+        }
+        & *{
+            color: #000;
+            opacity: 1;
+        }
+        .nav-list{
+            display: flex;
+            flex-direction: column;
+        }
+        .tocify-subheader{
+            margin-left: 15px;
+        }
+        .active *{
+            color: #3eb0ef;
+        }
+        a{
+            padding: 2px 0;
+            transition: @animateTime;
+            &:hover{
+                transform: translateX(-3px);
+            }
+        }
+    }
+    &.top-fixed{
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        margin-left: 314px;
+    }
+    .to-right{
+        background: rgba(222, 222, 222, 0.8);
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin-top: 15px;
+        margin-left: -15px;
+        height: 30px;
+        line-height: 30px;
+        transition: @animateTime;
+        cursor: pointer;
+        &:hover{
+            background: rgba(222, 222, 222, 1);
+        }
+    }
+}
+.tocify-extend-page{
+    display: none;
+}
+@media screen and (max-width:1024px){
+    #toc{
+        display: none;
     }
 }

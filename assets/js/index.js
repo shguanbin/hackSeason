@@ -3,6 +3,13 @@ $(function(){
     var friendLinkParentSide = $('#friend-link-side'); //友情链接挂载，侧边
     var authorlistH = $('.ar-author-list').height() + 30; //;邮编作者列表高度（加上padding）
 
+    // banner 设置文字
+    var bannerListBox = $('#banner-list-box');
+    var desIndex = 0;
+    var tmpBanner = '';//存放banner图片
+    var tmpBnTxtBox = '';//存放banner文本
+    var bnTxtEle = $('.banner-txt-box')
+
     //24节气 + 法定节假日
     var jie_ri = [
 
@@ -297,7 +304,15 @@ $(function(){
     //监听滚动
     var aTop;
     var listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
-
+    // 农历
+    var dateEl = '';
+    var datePanel = $('.banner-rili-content');
+    var myDate = new Date();
+    var thisYear = myDate.getFullYear();
+    var thisMonth = myDate.getMonth() + 1;
+    var thisDate = myDate.getDate() <= 9 ? '0' + myDate.getDate() : myDate.getDate();
+    var monthWidthZero = thisMonth <= 9 ? '0' + thisMonth : thisMonth;
+    strForJieQi = monthWidthZero.toString() + thisDate.toString();
     // 随机颜色
     var colorArr = [
         '#663ab6',
@@ -351,16 +366,15 @@ $(function(){
     var dd = D.getDate();
     var ww = D.getDay();
     var ss = parseInt(D.getTime() / 1000);
+    var rootEle = $('.menu-add-box'); //菜单挂载元素
 
-    //农历
-    if (yy < 100) yy = "19" + yy;
-    $('.nongli').text(GetLunarDay(yy, mm, dd));
+    //设置日历
+    setBannerDate();
+    
 
     //设置季节+banner
     setSeasion(season, jie_ri);
 
-    //设置日历
-    setBannerDate();
    
     //设置顶部菜单按钮
     if (typeof topNemuArr != 'undefined') {
@@ -368,7 +382,6 @@ $(function(){
     }
 
     function setTopMenu(menuArr) {
-        var rootEle = $('.menu-add-box'); //菜单挂载元素
         for (var i = 0; i < menuArr.length; i++) {
             var $subMenuRoot = $('<div class="inner sub-content"></div>'),
                 $rightMenuitemBox = $('<div class="right-content"></div>'),
@@ -399,7 +412,6 @@ $(function(){
             }
 
             rootEle.append($liEle);
-
         }
     }
 
@@ -515,19 +527,21 @@ $(function(){
         $('#foot-copy-right').text(footCopyRight);
     }
 
-
+    
     //返回顶部
     $('.to-top-container').click(function () {
         $('body,html').animate({
             scrollTop: 0
         }, 1000);
     });
-
+    
+    var tocEle = $('.toc-container'); //文章目录
+    var indexRight = $('.article-right-box');//首页右侧
+    var indexLeft = $('.article-left-box');//首页左侧
     $(window).scroll(function () {
         var topSize = $(window).scrollTop();
         aTop = topSize;
         // console.log(topSize);
-
         //回到顶部判断
         if (aTop > 630) {
             toTopBtn.addClass('show');
@@ -536,20 +550,25 @@ $(function(){
         }
 
         //tag是否固定
-        if (aTop >= 520 + authorlistH && $('.article-right-box').length > 0) {
-            $('.article-right-box').addClass('position-fixed').css({
-                'left': listLeftVal + 828,
+        if (aTop >= 520 + authorlistH && indexRight.length > 0) {
+            indexRight.addClass('position-fixed').css({
+                'left': listLeftVal + 928,
                 'top': -authorlistH + 28
             });
-        } else if (aTop < 520 + authorlistH && $('.article-right-box').length > 0) {
-            $('.article-right-box').removeClass('position-fixed');
+        } else if (aTop < 520 + authorlistH && indexRight.length > 0) {
+            indexRight.removeClass('position-fixed');
         }
-
+        //文章目录
+        if (aTop > 320) {
+            tocEle.addClass('top-fixed');
+        } else {
+            tocEle.removeClass('top-fixed');
+        }
     });
     $(window).resize(function () {
-        listLeftVal = typeof $('.article-left-box').offset() == 'undefined' ? 0 : $('.article-left-box').offset().left;
-        if (aTop >= 520 + authorlistH && $('.article-right-box').length > 0) {
-            $('.article-right-box').addClass('position-fixed').css({
+        listLeftVal = typeof indexLeft.offset() == 'undefined' ? 0 : indexLeft.offset().left;
+        if (aTop >= 520 + authorlistH && indexRight.length > 0) {
+            indexRight.addClass('position-fixed').css({
                 'left': listLeftVal + 828,
                 'top': -authorlistH + 28
             });
@@ -557,7 +576,7 @@ $(function(){
     });
 
     //滚动自动加载 首页
-    $('.article-left-box').infiniteScroll({
+    indexLeft.infiniteScroll({
         path: '.older-posts', //下一页按钮
         append: '.articale-item-box', //循环体
         status: '.page-load-status', //加载中、结束、报错页面
@@ -595,17 +614,23 @@ function colorRadom(secector, type) {
         }
     }
 }
+//农历
+if (yy < 100) yy = "19" + yy;
 
 function setBannerDate() {
-    var myDate = new Date();
-    var thisYear = myDate.getFullYear();
-    var thisMonth = myDate.getMonth() + 1;
-    var thisDate = myDate.getDate() <= 9 ? '0' + myDate.getDate() : myDate.getDate();
-    var monthWidthZero = thisMonth <= 9 ? '0' + thisMonth : thisMonth;
-    strForJieQi = monthWidthZero.toString() + thisDate.toString();
-    $('.data').text(thisDate + '/');
-    $('.guoli-month').text(thisMonth + '月');
-    $('.guoli-year').text(thisYear + '');
+    dateEl = '<div class="nongli">' + GetLunarDay(yy, mm, dd) + '</div>\
+    <div class="guoli-box">\
+        <span class="data">' +thisDate+ '/</span>\
+        <span class="year-month">\
+            <div class="guoli-month">' +monthWidthZero+ '</div>\
+            <div class="guoli-year">' +thisYear+ '</div>\
+        </span>\
+    </div>';
+    console.log(datePanel)
+    $('.banner-rili-content').append(dateEl);
+    // $('.data').text(thisDate + '/');
+    // $('.guoli-month').text(thisMonth + '月');
+    // $('.guoli-year').text(thisYear + '');
 }
 function GetBit(m, n) {
     return (m >> n) & 1;
@@ -713,16 +738,13 @@ function setSeasion(season, jr) {
 }
 
 function setBannerTxtImg(txt) {
-    // 设置文字
-    var desIndex = Math.floor(Math.random() * txt.des.length);
-    var bannerListBox = $('#banner-list-box');
-    var tmpBanner = '';
-    $('#season').text(txt.name);
-    $('#point').text('·');
-    $('#season-en').text(txt.en);
-    $('#description').text(txt.des[desIndex]);
-
-    // console.log(txt.banner)
+    desIndex = Math.floor(Math.random() * txt.des.length)
+    tmpBnTxtBox = '<div class="tbox-top"><span class="date-txt" id="season">'+ txt.name +'</span>\
+    <span class="data-txt-en" id="point">·</span>\
+    <span class="data-txt-en" id="season-en">'+ txt.en +'</span></div>\
+    <div class="line"></div>\
+    <div class="tbox-bottom" id="description">'+ txt.des[desIndex] +'</div>'
+    bnTxtEle.append(tmpBnTxtBox);
     if (txt.banner.length > 0) {
         for (var i = 0; i < txt.banner.length; i++) {
             tmpBanner +=
@@ -771,5 +793,10 @@ $('body').on('mouseenter', '.nav-', function () {
         })
     }
 })
+
+//点击收起文章目录
+$('body').on('click', '.to-right', function(){
+    alert('收什么收，懒得写了，将就用，过几天再写')
+});
 
 })

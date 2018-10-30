@@ -19,7 +19,6 @@ into the {body} of the default.hbs template --}}
 </div> --}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
-
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
             {{!-- <header class="post-full-header">
@@ -108,6 +107,14 @@ into the {body} of the default.hbs template --}}
            
 
         </article>
+        {{!-- 目录生成位置 --}}
+        <div class="toc-container">
+            <div id="toc">
+            </div>
+            <div class="to-right">
+                收起 >>
+            </div>
+        </div>
 
     </div>
 </main>
@@ -233,13 +240,23 @@ $(document).ready(function () {
 
     update();
 
+    
+
 });
 </script>
-
 {{!-- 代码高亮 --}}
 <script src="{{asset "js/prism.js"}}"></script>
 
 {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
 <script src="{{asset "js/jquery.fitvids.js"}}"></script>
-
+{{!-- 生成目录插件 --}}
+<script src="{{asset "toc/jquery-ui.min.js"}}"></script>
+<script src="{{asset "toc/jquery.tocify.min.js"}}"></script>
+<script>
+$(function() {
+    $("#toc").tocify({
+        scrollTo: "70"
+    });
+});
+</script>
 {{/contentFor}}
