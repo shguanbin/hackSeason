@@ -429,9 +429,10 @@ body {
   letter-spacing: 8px;
 }
 .banner-top-content .banner-txt-box:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   color: #fff;
-  transform: scale(1.02);
+  transform: scale(1.02) translateY(-5px);
 }
 .banner-top-content .banner-rili-content {
   position: absolute;
@@ -451,8 +452,9 @@ body {
 }
 .banner-top-content .banner-rili-content:hover {
   background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   color: #ca582b;
-  transform: scale(1.02);
+  transform: translateY(-5px);
 }
 .banner-top-content .banner-rili-content .nongli {
   font-size: 24px;
@@ -491,6 +493,9 @@ body {
 }
 .index-article-box .article-left-box .articale-item-box:hover {
   transform: translateX(-5px);
+}
+.index-article-box .article-left-box .articale-item-box:hover .txt {
+  color: #545454 !important;
 }
 .index-article-box .article-left-box .articale-item-box .articale-item-bcontent {
   width: 100%;
@@ -779,9 +784,6 @@ body {
 .index-article-box .article-right-box .ar-item-box .ar-users-list .ar-user-item:hover {
   transform: translateX(-5px);
   background: linear-gradient(to right, transparent, #eeeeee, transparent);
-}
-.index-article-box .article-right-box .ar-item-box .ar-users-list .ar-user-item:hover .head {
-  filter: grayscale(0);
 }
 .index-article-box .article-right-box .ar-item-box .ar-users-list .ar-user-item:not(:last-child) {
   border-bottom: 1px dashed #dddddd;
@@ -1494,4 +1496,30 @@ div.code-toolbar {
   #toc {
     display: none;
   }
+}
+.post-full-content {
+  font-size: 16px;
+}
+.post-full-content h1 {
+  font-size: 24px;
+}
+.post-full-content h2 {
+  font-size: 20px;
+  margin: 1.5em 0 .5em;
+}
+.post-full-content h3 {
+  font-size: 16px;
+}
+.post-full-content li {
+  margin: 0;
+}
+.post-full-content blockquote {
+  background: #f0f0f0;
+}
+.post-full-content blockquote p {
+  padding: 10px 0;
+  font-style: inherit;
+}
+#toc li {
+  text-transform: none;
 }

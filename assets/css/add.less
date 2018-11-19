@@ -8,6 +8,7 @@
 @aniTimeBannerBg:2s;
 // @shadow:0 0 5px rgba(0, 0, 0, 0.2);
 @shadow:8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+@hoverShadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 @lineColor:#dddddd;
 //动画
 //下拉菜单
@@ -471,9 +472,10 @@ body{
             letter-spacing: 8px;
         }
         &:hover{
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: @hoverShadow;
             color: #fff;
-            transform: scale(1.02);
+            transform: scale(1.02) translateY(-5px);
         }
     }
     .banner-rili-content{
@@ -493,8 +495,10 @@ body{
         animation: toLeft @aniTimeBanner;
         &:hover{
             background: rgba(255, 255, 255, 0.4);
+            box-shadow: @hoverShadow;
             color: #ca582b;
-            transform: scale(1.02);
+            transform: translateY(-5px);
+            // transform: scale(1.02);
         }
         .nongli{
             font-size: 24px;
@@ -534,6 +538,9 @@ body{
             transition: @animateTime;
             &:hover{
                 transform: translateX(-5px);
+                .txt{
+                    color: #545454 !important;
+                }
             }
             .articale-item-bcontent{
                 width: 100%;
@@ -842,9 +849,6 @@ body{
                     &:hover{
                         transform: translateX(-5px);
                         background: linear-gradient(to right, transparent, #eeeeee, transparent);
-                        .head{
-                            filter: grayscale(0);
-                        }
                     }
                     &:not(:last-child){
                         border-bottom: 1px dashed @lineColor;
@@ -1591,5 +1595,35 @@ div.code-toolbar{
 @media screen and (max-width:1024px){
     #toc{
         display: none;
+    }
+}
+
+// 文章页面文字大小重新调整
+.post-full-content{
+    font-size: 16px;
+    h1{
+        font-size: 24px;
+    }
+    h2{
+        font-size: 20px;
+        margin: 1.5em 0 .5em;
+    }
+    h3{
+        font-size: 16px;
+    }
+    li{
+        margin: 0;
+    }
+    blockquote{
+        background: #f0f0f0;
+        p{
+            padding: 10px 0;
+            font-style: inherit;
+        }
+    }
+}
+#toc{
+    li{
+        text-transform: none;
     }
 }
