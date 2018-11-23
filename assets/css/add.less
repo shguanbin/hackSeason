@@ -1270,7 +1270,9 @@ div.code-toolbar{
         text-align: center !important;
     }
 }
-
+.pbone-tip{
+    display: none;
+}
 
 
 
@@ -1284,6 +1286,15 @@ div.code-toolbar{
 
 //移动端
 @media screen and (max-width:1024px){
+    .pbone-tip{
+        display: block;
+        margin-top: 56px;
+        text-align: center;
+        padding: 3px 0;
+    }
+    .site-header{
+        display: none;
+    }
     .outer{
         padding: 0 !important;
     }
@@ -1627,3 +1638,175 @@ div.code-toolbar{
         text-transform: none;
     }
 }
+.guidang-content{
+    width: 100%;
+    .top{
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      height: 500px;
+      color: #fff;
+      .title{
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+        font-size: 3.8rem;
+        font-weight: 700;
+        text-align: center;
+      }
+      .video{
+        width: 100%;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    .gd-echart{
+      display: flex;
+      position: relative;
+      background: #fff;
+      z-index: 100;
+      width: 1228px;
+      height: 550px;
+      margin: -70px auto 0;
+      box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+      .chart{
+        width: 100%;
+        height: 550px;
+        &#leida{
+          border-right: 1px solid #dedede;
+        }
+      }
+    }
+    .gd-time-line{
+      width: 1228px;
+      padding: 30px 20px;
+      background: #fff;
+      margin: 20px auto 30px;
+      box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+      .title{
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .top-sanjiaoxing{
+          width: 0px;
+          height: 0px;
+          border-left:50px solid transparent;
+          border-right:50px solid transparent;
+          border-top:50px solid transparent;
+          margin:-30px auto 0;
+      }
+      .month-item{
+        .line-item{
+          display: flex;
+          width: 100%;
+          height: 44px;
+          .item-center{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 60px;
+            height: 100%;
+            color: #fff;
+            text-align: center;
+            h3{
+                margin: 2px 0;
+                font-weight: bold; 
+            }
+        }
+        &.month{
+            height: 80px;
+        }
+          .item-left,.item-right{
+            width: calc(~'50% - 30px');
+          }
+          .item-right{
+            display: flex;
+            align-items: center;
+            &:hover{
+                .title-content{
+                    background: #eeeeee;
+                }
+            }
+            *{
+                transition: @animateTime;
+                flex-shrink: 0;
+            }
+            .san-jiao-xing{
+              width: 0px;
+              height: 0px;
+              border-right:5px solid transparent;
+              border-bottom:5px solid transparent;
+              border-top:5px solid transparent;
+            }
+            .zuo-san-jiao-xing{
+              width: 0px;
+              height: 0px;
+              border-left:10px solid transparent;
+              border-bottom:10px solid transparent;
+              border-top:10px solid transparent;
+              margin-left: -15px;
+            }
+            .line{
+              width: 50px;
+              height: 1px;
+              margin-left: -10px;
+            }
+            .postcount{
+                position: absolute;
+                margin-left: 15px;
+                width: 20px;
+                height: 20px;
+                line-height: 18px;
+                font-size: 12px;
+                background-color: #fff;
+                text-align: center;
+                border-radius: 50%;
+            }
+            .title-content{
+                display: flex;
+                align-items: center;
+                max-width: 90%;
+                border-radius: 3px;
+                height: 36px;
+                color:#000;
+                h3{
+                    margin: 0;
+                    font-weight: bold;
+                    font-size: 18px;
+                    width: 100%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding: 0 10px;
+                }
+            }
+          }
+        }
+        &:nth-child(odd){
+          transform: rotateY(180deg);
+          text-align: right;
+          h3,h4,h5,.postcount{
+            transform: rotateY(180deg);
+          }
+        }
+      }
+    }
+    .tree-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: #fff;
+        width: 1228px;
+        margin: -62px auto 30px;
+        img{
+            margin-left: 1px;
+            width:60%;
+            height:800px;
+        }
+    }
+  }

@@ -18,14 +18,14 @@ $(function(){
             'name': '立春',
             'en': 'Spring begins',
             'des': ['东风吹散梅梢雪，一夜挽回天下春'],
-            'banner': ['lichun1.jpg', 'lichun2.jpg', 'lichun3.jpg']
+            'banner': ['lichun.mp4']
         }, //立春
         {
             'time': '0219',
             'name': '雨水',
             'en': 'The rains',
             'des': ['天将化雨舒清景，萌动生机待绿田'],
-            'banner': ['yushui1.jpg', 'yushui2.jpg', 'yushui3.jpg']
+            'banner': ['yushui1.mp4']
         }, //雨水
 
         {
@@ -33,28 +33,28 @@ $(function(){
             'name': '惊蛰',
             'en': 'Insects awake',
             'des': ['一阵催花雨，数声惊蛰雷'],
-            'banner': ['jingzhe1.jpg', 'jingzhe2.jpg', 'jingzhe3.jpg']
+            'banner': ['jingzhe.mp4']
         }, //惊蛰
         {
             'time': '0321',
             'name': '春分',
             'en': 'Vernal Equinox',
             'des': ['天将小雨交春半，谁见枝头花历乱'],
-            'banner': ['chunfen1.jpg', 'chunfen2.jpg', 'chunfen3.jpg']
+            'banner': ['chunfen.mp4']
         }, //春分
         {
             'time': '0405',
             'name': '清明',
             'en': 'Clear and bright',
             'des': ['借问酒家何处有? 牧童遥指杏花村'],
-            'banner': ['qingming1.jpg', 'qingming2.jpg', 'qingming3.jpg']
+            'banner': ['qingming.mp4']
         }, //清明
         {
             'time': '0420',
             'name': '谷雨',
             'en': 'Grain rain',
             'des': ['花木含甘露，岂非时节好'],
-            'banner': ['guyu1.jpg', 'guyu2.jpg', 'guyu3.jpg']
+            'banner': ['guyu.mp4']
         }, //谷雨
 
         {
@@ -62,28 +62,28 @@ $(function(){
             'name': '立夏',
             'en': 'Summer begins',
             'des': ['云收雨过波添，楼高水冷瓜甜，绿树阴垂画檐'],
-            'banner': ['lixia1.jpg', 'lixia2.jpg', 'lixia3.jpg']
+            'banner': ['lixia.mp4']
         }, //立夏
         {
             'time': '0521',
             'name': '小满',
             'en': 'Grain buds',
             'des': ['小满小满，谷物渐满'],
-            'banner': ['xiaoman1.jpg', 'xiaoman2.jpg', 'xiaoman3.jpg']
+            'banner': ['xiaoman.mp4']
         }, //小满
         {
             'time': '0606',
             'name': '芒种',
             'en': 'Grain in ear',
             'des': ['时雨及芒种，四野皆插秧'],
-            'banner': ['mangzhong1.jpg', 'mangzhong2.jpg', 'mangzhong3.jpg']
+            'banner': ['mangzhong.mp4']
         }, //芒种
         {
             'time': '0621',
             'name': '夏至',
             'en': 'Summer solstice',
             'des': ['夏至不锄根边草，如同养下毒蛇咬'],
-            'banner': ['xiazhi1.jpg', 'xiazhi2.jpg', 'xiazhi3.jpg']
+            'banner': ['xiazhi.mp4']
         }, //夏至
 
         {
@@ -91,28 +91,28 @@ $(function(){
             'name': '小暑',
             'en': 'Slight heat',
             'des': ['倏忽温风至，因循小暑来'],
-            'banner': ['xiaoshu1.jpg', 'xiaoshu2.jpg', 'xiaoshu3.jpg']
+            'banner': ['xiaoshu.mp4']
         }, //小暑
         {
             'time': '0723',
             'name': '大暑',
             'en': 'Great heat',
             'des': ['何以销烦暑，端居一院中'],
-            'banner': ['dashu1.jpg', 'dashu2.jpg', 'dashu3.jpg']
+            'banner': ['dashu.mp4']
         }, //大暑
         {
             'time': '0807',
             'name': '立秋',
             'en': 'Autumn begins',
             'des': ['秋风吹雨过南楼，一夜新凉是立秋', '山僧不解数甲子,一叶落知天下秋'],
-            'banner': ['liqiu1.jpg', 'liqiu2.jpg', 'liqiu3.jpg']
+            'banner': ['liqiu.mp4']
         }, //立秋
         {
             'time': '0823',
             'name': '处暑',
             'en': 'Stopping heat',
             'des': ['处暑无三日，新凉直万金'],
-            'banner': ['chushu1.jpg', 'chushu2.jpg', 'chushu3.jpg']
+            'banner': ['chushu.mp4']
         }, //处暑
 
         {
@@ -120,28 +120,28 @@ $(function(){
             'name': '白露',
             'en': 'White dews',
             'des': ['蒹葭苍苍，白露为霜,所谓伊人，在水一方'],
-            'banner': ['bailu1.jpg', 'bailu2.jpg', 'bailu3.jpg']
+            'banner': ['bailu.mp4']
         }, //白露
         {
             'time': '0923',
             'name': '秋分',
             'en': 'Autumn Equinox',
             'des': ['燕将明日去，秋向此时分'],
-            'banner': ['qiufen1.jpg', 'qiufen2.jpg', 'qiufen3.jpg']
+            'banner': ['qiufen.mp4']
         }, //秋分
         {
             'time': '1008',
             'name': '寒露',
             'en': 'Cold dews',
             'des': ['草色多寒露，虫声似故乡'],
-            'banner': ['hanlu1.jpg', 'hanlu2.jpg', 'hanlu3.jpg']
+            'banner': ['hanlu.mp4']
         }, //寒露
         {
             'time': '1023',
             'name': '霜降',
             'en': 'Hoar-frost falls',
             'des': ['鸡声茅店月，人迹板桥霜'],
-            'banner': ['shuangjiang1.jpg', 'shuangjiang2.jpg', 'shuangjiang3.jpg']
+            'banner': ['shuangjiang.mp4']
         }, //霜降
 
         {
@@ -149,28 +149,28 @@ $(function(){
             'name': '立冬',
             'en': 'Winter begins',
             'des': ['忽见桃花出小红，因惊十月起温风'],
-            'banner': ['lidong1.jpg', 'lidong2.jpg', 'lidong3.jpg']
+            'banner': ['lidong.mp4']
         }, //立冬
         {
             'time': '1122',
             'name': '小雪',
             'en': 'Light snow',
             'des': ['云暗初成霰点微，旋闻蔌蔌洒窗扉'],
-            'banner': ['xiaoxue1.jpg', 'xiaoxue2.jpg', 'xiaoxue3.jpg']
+            'banner': ['xiaoxue.mp4']
         }, //小雪
         {
             'time': '1207',
             'name': '大雪',
             'en': 'Heavy snow',
             'des': ['渺万里层云，千山暮雪，只影向谁去？'],
-            'banner': ['daxue1.jpg', 'daxue2.jpg', 'daxue3.jpg']
+            'banner': ['daxue.mp4']
         }, //大雪
         {
             'time': '1222',
             'name': '冬至',
             'en': 'Winter Solstice',
             'des': ['寒谷春生，熏叶气、玉筒吹谷'],
-            'banner': ['dongzhi1.jpg', 'dongzhi2.jpg', 'dongzhi3.jpg']
+            'banner': ['dongzhi.mp4']
         }, //冬至
 
         {
@@ -178,14 +178,14 @@ $(function(){
             'name': '小寒',
             'en': 'Slight cold',
             'des': ['轻风小寒吹浪花，新柳茸茸啼乳鸦'],
-            'banner': ['xiaohan1.jpg', 'xiaohan2.jpg', 'xiaohan3.jpg']
+            'banner': ['xiaohan.mp4']
         }, //小寒
         {
             'time': '0120',
             'name': '大寒',
             'en': 'Great cold',
             'des': ['乃知大寒岁，农者尤苦辛'],
-            'banner': ['dahan1.jpg', 'dahan2.jpg', 'dahan3.jpg']
+            'banner': ['dahan.mp4']
         }, //大寒
 
         //节假日
@@ -195,7 +195,7 @@ $(function(){
             'name': '建军节',
             'en': 'army day',
             'des': ['红军不怕远征难，万水千山只等闲', '男儿何不带吴钩，收取关山五十州', '自古英雄多奇志，狂揽九州苍桑月'],
-            'banner': ['jianjunjie1.jpg', 'jianjunjie2.jpg', 'jianjunjie3.jpg']
+            'banner': ['jianjunjie.mp4']
         },
 
         //中秋节
@@ -204,7 +204,7 @@ $(function(){
             'name': '中秋节',
             'en': 'Mid-Autumn Festival',
             'des': ['但愿人长久，千里共婵娟', '今夜月明人尽望，不知秋思落谁家', '起舞徘徊风露下，今夕不知何夕'],
-            'banner': ['zhongqiu1.jpg', 'zhongqiu2.jpg', 'zhongqiu3.jpg']
+            'banner': ['zhongqiu.mp4']
         },
 
         // 国庆
@@ -213,49 +213,49 @@ $(function(){
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
-            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+            'banner': ['guoqing.mp4']
         },
         {
             'time': '1002',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
-            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+            'banner': ['guoqing.mp4']
         },
         {
             'time': '1003',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
-            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+            'banner': ['guoqing.mp4']
         },
         {
             'time': '1004',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
-            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+            'banner': ['guoqing.mp4']
         },
         {
             'time': '1005',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
-            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+            'banner': ['guoqing.mp4']
         },
         {
             'time': '1006',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
-            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+            'banner': ['guoqing.mp4']
         },
         {
             'time': '1007',
             'name': '国庆',
             'en': 'National Day',
             'des': ['犯我中华者，虽远必诛', '苟利国家生死以，岂因祸福避趋之！', '天行健，君子以自强不息'],
-            'banner': ['guoqing1.jpg', 'guoqing2.jpg', 'guoqing3.jpg']
+            'banner': ['guoqing.mp4']
         },
     ];
 
@@ -263,25 +263,25 @@ $(function(){
         'name': '春',
         'en': 'spring',
         'des': ['小楼一夜听春雨，深巷明朝卖杏花', '最是一年春好处，绝胜烟柳满皇都', '燕子飞时，绿水人家绕'],
-        'banner': ['spring1.jpg', 'spring2.jpg', 'spring3.jpg']
+        'banner': ['spring.mp4']
     }, //春
     {
         'name': '夏',
         'en': 'summer',
         'des': ['小荷才露尖尖角，早有蜻蜓立上头', '连雨不知春去，一晴方觉夏深', '稻花香里说丰年。听取蛙声一片'],
-        'banner': ['summer1.jpg', 'summer2.jpg', 'summer3.jpg']
+        'banner': ['summer.mp4']
     }, //夏
     {
         'name': '秋',
         'en': 'autumn',
         'des': ['一声梧叶一声秋，一点芭蕉一点愁', '落霞与孤鹜齐飞，秋水共长天一色', '山远天高烟水寒，相思枫叶丹'],
-        'banner': ['autumn1.jpg', 'autumn2.jpg', 'autumn3.jpg']
+        'banner': ['autumn.mp4']
     }, //秋
     {
         'name': '冬',
         'en': 'winter',
         'des': ['北国风光，千里冰封，万里雪飘', '山回路转不见君，雪上空留马行处', '欲将轻骑逐，大雪满弓刀'],
-        'banner': ['winter1.jpg', 'winter2.jpg', 'winter3.jpg']
+        'banner': ['winter1.mp4']
     }, //冬
     ]
 
@@ -426,14 +426,14 @@ $(function(){
     colorRadom($('.ar-item-title'), 'border-color'); //右边标题
 
     // 首页背景banner
-    var mySwiper = new Swiper('.swiper-container', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-        },
-        effect: 'fade',
-        speed: 1000,
-    });
+    // var mySwiper = new Swiper('.swiper-container', {
+    //     loop: true,
+    //     autoplay: {
+    //         delay: 10000,
+    //     },
+    //     effect: 'fade',
+    //     speed: 1000,
+    // });
 
 
     $('#search-menu').hover(
@@ -626,7 +626,7 @@ function setBannerDate() {
             <div class="guoli-year">' +thisYear+ '</div>\
         </span>\
     </div>';
-    console.log(datePanel)
+    // console.log(datePanel)
     $('.banner-rili-content').append(dateEl);
     // $('.data').text(thisDate + '/');
     // $('.guoli-month').text(thisMonth + '月');
@@ -745,16 +745,11 @@ function setBannerTxtImg(txt) {
     <div class="line"></div>\
     <div class="tbox-bottom" id="description">'+ txt.des[desIndex] +'</div>'
     bnTxtEle.append(tmpBnTxtBox);
-    if (txt.banner.length > 0) {
-        for (var i = 0; i < txt.banner.length; i++) {
-            tmpBanner +=
-                '<div class="swiper-slide">' +
-                '<img src="http://hackbinimg.luokangyuan.com/banner/' + txt.banner[i] + '">' +
-                '</div>'
-        };
-
-        bannerListBox.append(tmpBanner);
-    }
+    tmpBanner +=
+        '<div class="swiper-slide">' +
+        '<video width="100%" muted autoplay loop><source src="http://hackbinimg.luokangyuan.com/banner/' + txt.banner[0] + '" type="video/mp4"></video>' +
+        '</div>'
+    bannerListBox.append(tmpBanner);
 }
 //点击放大图片
 $('body').on('click', '.post-full .post-full-content img', function () {
