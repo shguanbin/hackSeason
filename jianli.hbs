@@ -1,0 +1,78 @@
+{{!< default}}
+
+{{!-- 自定义简历页面 未提供可见入口--}}
+
+<header class="site-header outer" style="height:0px;">
+    <div class="inner">
+        {{> "site-nav"}}
+    </div>
+</header>
+
+<main id="site-main" class="site-main">
+    <div class="guidang-content">
+        <div class="top">
+            <span class="title">个人简历</span>
+            <video class="video" muted autoplay loop>
+                <source src="http://hackbinimg.luokangyuan.com/banner/guidang.mp4">
+            </video>
+              
+        </div>
+        <div class="gd-content">
+            <div class="gd-echart jianli-box">
+                <div class="jianli">
+                    <div class="base-msg">
+                        <div class="head-img">
+                            <img id="head" src="" alt="">
+                        </div>
+                        <div class="txt">
+                        </div>
+                        <div class="contact">
+                            <!-- <h3>联系方式</h3>
+                            <h4>电话</h4> -->
+                        </div>
+                    </div>
+                    <div class="main-msg">
+                        <div class="mian-left">
+                            <div class="main-msg-item">
+                                <h3 class="title">教育经历</h3>
+                                <div class="content education">
+                                    <h4 class="sub-title school"></h4>
+                                    <h4 class="sub-title major"></h4>
+                                    <ul class="item-list">
+                                        <li>如实填写即可，要注意的是，投简历之前，可以先在这里查询该公司是否注册了。有些猎头会随便起一个公司名字，专门接受简历然后再联系求职者</li>
+                                        <li>写常用邮箱即可，论坛上，偶尔会讨论使用什么尾缀的邮箱看起来比较厉害，有的建议用gmail，觉得能突显英语能力。有的建议使用Outlook或者163</li>
+                                        <li>只要求职者在简历中展现出自己的优点，什么邮箱尾缀都不重要。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="main-msg-item">
+                                <h3 class="title">个人技能</h3>
+                                <div class="content">
+                                    <div class="skill-list">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-msg-item">
+                                <h3 class="title">其他介绍</h3>
+                                <div class="content others">
+                                    <ul class="item-list">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-right">
+                            <div class="main-msg-item">
+                                <h3 class="title">工作经历</h3>
+                                <div class="content work-exp">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="{{asset "js/jianli.js"}}"></script>
