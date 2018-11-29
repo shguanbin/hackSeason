@@ -1422,6 +1422,9 @@ div.code-toolbar {
   margin-left: 2.5%;
   box-shadow: 0 0 20px #000;
 }
+.kg-gallery-container {
+  width: auto;
+}
 @keyframes postImgShow {
   0% {
     top: 30px;
@@ -1756,6 +1759,12 @@ div.code-toolbar {
 .guidang-content .jianli .base-msg .txt .item,
 .guidang-content .jianli .base-msg .contact .item {
   margin-bottom: 7px;
+  font-size: 1.6rem;
+  line-height: 24px;
+}
+.guidang-content .jianli .base-msg .txt .item:last-child,
+.guidang-content .jianli .base-msg .contact .item:last-child {
+  margin-bottom: 0px;
 }
 .guidang-content .jianli .main-msg {
   display: flex;

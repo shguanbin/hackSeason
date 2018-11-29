@@ -19,7 +19,11 @@ $contactEle.append('<h2 class="title">联系方式</h2>\
 var $educationEl = $('.education');
 $educationEl.find('.school').text(jianli.education.school + '(' +jianli.education.time+ ')')
 $educationEl.find('.major').text(jianli.education.major)
-
+var eduTmp = '';
+jianli.education.des.forEach(function(item){
+  eduTmp += '<li>' +item+ '</li>';
+})
+$educationEl.find('.item-list').append(eduTmp);
 // 技能
 var $skillEle = $('.skill-list');
 jianli.skill.forEach(function(item){
