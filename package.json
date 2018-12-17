@@ -2,7 +2,7 @@
     "name": "hackSeason",
     "description": "根据Ghost博客自带主题进行开发的新主题",
     "demo": "http://w3more.cn/",
-    "version": "201801129",
+    "version": "201801217",
     "engines": {
         "ghost": ">=1.2.0"
     },
